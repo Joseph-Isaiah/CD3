@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_02_180847) do
+ActiveRecord::Schema.define(version: 2020_03_02_230349) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "hospitals", force: :cascade do |t|
+    t.string "name"
+    t.text "address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +30,13 @@ ActiveRecord::Schema.define(version: 2020_03_02_180847) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
+    t.string "unit"
+    t.bigint "hospital_id"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["hospital_id"], name: "index_users_on_hospital_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "users", "hospitals"
 end
