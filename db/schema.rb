@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_03_011335) do
+ActiveRecord::Schema.define(version: 2020_03_03_175252) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(version: 2020_03_03_011335) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.jsonb "details"
+    t.bigint "condition_id"
+    t.index ["condition_id"], name: "index_calls_on_condition_id"
     t.index ["hospital_id"], name: "index_calls_on_hospital_id"
     t.index ["user_id"], name: "index_calls_on_user_id"
   end
@@ -69,6 +71,7 @@ ActiveRecord::Schema.define(version: 2020_03_03_011335) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "calls", "conditions"
   add_foreign_key "calls", "hospitals"
   add_foreign_key "calls", "users"
   add_foreign_key "conditions", "categories"

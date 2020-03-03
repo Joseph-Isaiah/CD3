@@ -1,0 +1,16 @@
+<h1>Calls#new</h1>
+<p>Find me in app/views/calls/new.html.erb</p>
+
+<%= simple_form_for @call do |f| -%>
+  <%= f.association :hospital, as: :radio_buttons, collection: Hospital.all %>
+  <%= f.association :condition, as: :radio_buttons, collection: Condition.all %>
+  <%= f.input :gender, as: :radio_buttons, collection: Call::VALID_GENDERS %>
+
+  <%= render "calls/fields/age", f: f %>
+  <%= render "calls/fields/pulse", f: f %>
+  <%= render "calls/fields/blood_pressure", f: f %>
+  <%= render "calls/fields/cards" %>
+
+  <%= f.input :temperature %>
+  <%= f.input :spa02 %>
+<% end -%>
