@@ -1,8 +1,8 @@
-<label class="labl">
-    <input type="radio" name="radioname" value="one_value" checked="checked"/>
-    <div>Small</div>
-</label>
-<label class="labl">
-    <input type="radio" name="radioname" value="another" />
-    <div>Small</div>
-</label>
+<% items.each do |item| %>
+  <label class="labl">
+    <%= f.radio_button item.to_fk, item.id %>
+    <div>
+      <%= render "#{item.to_table_name}/card", item.to_sym => item %>
+    </div>
+  </label>
+<% end %>
