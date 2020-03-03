@@ -1,0 +1,8 @@
+<% items.each do |item| %>
+  <label class="labl">
+    <%= f.radio_button item.to_fk, item.id %>
+    <div>
+      <%= render "#{item.to_table_name}/card", item.to_sym => item %>
+    </div>
+  </label>
+<% end %>
