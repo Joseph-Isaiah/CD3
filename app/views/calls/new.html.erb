@@ -7,10 +7,10 @@
   <%= f.input :gender, as: :radio_buttons, collection: Call::VALID_GENDERS %>
 
   <%= render "calls/fields/age", f: f %>
+  <%= render "calls/fields/pulse", f: f %>
   <%= render "calls/fields/blood_pressure", f: f %>
   <%= render "calls/fields/cards" %>
 
-  <%= f.input :pulse %>
   <%= f.input :temperature %>
   <%= f.input :spa02 %>
 <% end -%>
