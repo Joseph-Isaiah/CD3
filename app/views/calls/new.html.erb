@@ -11,9 +11,10 @@
 
   <%= render "fields/age", f: f %>
 
-  <%= f.input :blood_pressure %>
-  <%= f.input :pulse %>
-  <%= f.input :temperature %>
-  <%= f.input :spa02 %>
-  <%= f.submit %>
+  <%= render "calls/fields/age", f: f %>
+  <%= render "calls/fields/pulse", f: f %>
+  <%= render "calls/fields/blood_pressure", f: f %>
+  <%= render "calls/fields/temperature", f: f %>
+  <%= render "calls/fields/spao2", f: f %>
+  <%= render "calls/fields/cards" %>
 <% end -%>
