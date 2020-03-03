@@ -4,17 +4,17 @@
 <%= simple_form_for @call do |f| -%>
 
   <%= f.association :hospital, as: :radio_buttons, collection: Hospital.all %>
-  <%= render "fields/cards", f: f, items: Hospital.all %>
+  <%= render "calls/fields/cards", f: f, items: Hospital.all %>
 
   <%= f.association :condition, as: :radio_buttons, collection: Condition.all %>
   <%= f.input :gender, as: :radio_buttons, collection: Call::VALID_GENDERS %>
 
-  <%= render "fields/age", f: f %>
+  <%= render "calls/fields/age", f: f %>
 
   <%= render "calls/fields/age", f: f %>
   <%= render "calls/fields/pulse", f: f %>
   <%= render "calls/fields/blood_pressure", f: f %>
   <%= render "calls/fields/temperature", f: f %>
   <%= render "calls/fields/spao2", f: f %>
-  <%= render "calls/fields/cards" %>
+
 <% end -%>
