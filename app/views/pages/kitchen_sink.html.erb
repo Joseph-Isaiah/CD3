@@ -2,12 +2,11 @@
 <%= render 'components/banner' %>
 
 <h2>Hospital Cards</h2>
-
 <div class="container">
   <div class="row">
     <% 9.times do %>
       <div class="col-4">
-        <%= render 'hospitals/card', Hospital.first%>
+         <%= render "hospitals/card", hospital: Hospital.first%>
       </div>
     <% end %>
   </div>
