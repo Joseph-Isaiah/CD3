@@ -7,7 +7,7 @@
   <div class="row">
     <% 9.times do %>
       <div class="col-4">
-        <%= render 'hospitals/card' %>
+        <%= render 'hospitals/card', Hospital.first%>
       </div>
     <% end %>
   </div>
