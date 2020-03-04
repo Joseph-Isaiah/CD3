@@ -1,5 +1,10 @@
-Hospital.destroy_all
+require "pry-byebug"
+Call.destroy_all
+Condition.destroy_all
+Category.destroy_all
 User.destroy_all
+Hospital.destroy_all
+
 
 puts "Creating Hospitals"
 
@@ -73,22 +78,179 @@ puts "creating conditions for Medical"
 
 Condition.create!(
   name: "Chest pain",
+  category: Category.find_by(name: "Medical"),
+  fields: {
+    time_of_onset: "string",
+    meds: "meds_options_chest_pain",
+    timing: "timing_options",
+    current_condition: "current_condition_options",
+    onset: "onset_options",
+    severity: "0-10_range",
+    quality: "quality_options",
+    radiation: "body_part",
+    associated_symptoms: "associated_symptoms",
+    worsened_by: "worsened_by_options",
+    relieved_by: "relieved_by_options",
+    past_history: "past_history_options",
+    STEMI: "boolean"
+  }
+)
+
+Condition.create!(
+  name: "Cardiac Arrest",
   category: Category.find_by(name: "Medical")
 )
 
+Condition.create!(
+  name: "Shortness of Breath",
+  category: Category.find_by(name: "Medical")
+)
+
+Condition.create!(
+  name: "Abdominal Pain",
+  category: Category.find_by(name: "Medical")
+)
+
+Condition.create!(
+  name: "Neuro",
+  category: Category.find_by(name: "Medical")
+)
+
+Condition.create!(
+  name: "Unresponsive",
+  category: Category.find_by(name: "Medical")
+)
+
+Condition.create!(
+  name: "Drowning",
+  category: Category.find_by(name: "Medical")
+)
+
+Condition.create!(
+  name: "Bleeding",
+  category: Category.find_by(name: "Medical")
+)
+
+Condition.create!(
+  name: "Other",
+  category: Category.find_by(name: "Medical")
+)
 
 puts "creating conditions for Trauma"
 
 Condition.create!(
   name: "Burn",
+  category: Category.find_by(name: "Trauma"),
+  fields: {
+    time_of_onset: "string",
+    smoke_inhalation: "smoke_inhalation_options",
+    breathing_difficulty: "boolean",
+    context: "context_options",
+    closed_space_entrapment: "boolean",
+    facial_involvement: "facial_involvement_options",
+    location_of_burn: "body_part",
+    degree_of_burn: "1-3_range",
+    percentage: "integer",
+    meds: "meds_options_burn"
+  }
+)
+
+Condition.create!(
+  name: "MVC",
+  category: Category.find_by(name: "Trauma")
+)
+
+Condition.create!(
+  name: "Fall",
+  category: Category.find_by(name: "Trauma")
+)
+
+Condition.create!(
+  name: "GSW",
+  category: Category.find_by(name: "Trauma")
+)
+
+Condition.create!(
+  name: "Laceration",
+  category: Category.find_by(name: "Trauma")
+)
+
+Condition.create!(
+  name: "Other",
   category: Category.find_by(name: "Trauma")
 )
 
 puts "creating conditions for Pregnancy"
+
+Condition.create!(
+  name: "Labor",
+  category: Category.find_by(name: "Pregnancy")
+)
+
+Condition.create!(
+  name: "Bleeding",
+  category: Category.find_by(name: "Pregnancy")
+)
+
+Condition.create!(
+  name: "Pain",
+  category: Category.find_by(name: "Pregnancy")
+)
+
+Condition.create!(
+  name: "Other",
+  category: Category.find_by(name: "Pregnancy")
+)
+
 puts "creating conditions for Child"
 
+Condition.create!(
+  name: "Respiratory",
+  category: Category.find_by(name: "Child")
+)
+
+Condition.create!(
+  name: "Fever",
+  category: Category.find_by(name: "Child")
+)
+
+Condition.create!(
+  name: "Abdominal Pain",
+  category: Category.find_by(name: "Child")
+)
+
+Condition.create!(
+  name: "Unresponsive",
+  category: Category.find_by(name: "Child")
+)
+
+Condition.create!(
+  name: "Drowning",
+  category: Category.find_by(name: "Child")
+)
+
+Condition.create!(
+  name: "Other",
+  category: Category.find_by(name: "Child")
+)
 conditions_array = Condition.all
 
-users_array = Condition.all
+users_array = User.where(hospital_id: nil)
 
 puts "creating calls"
+
+gender_array = ["female", "male"]
+
+20.times do
+  Call.create(
+    gender: gender_array.sample,
+    age: rand(100),
+    blood_pressure: "#{rand(60..180)}/#{rand(30..100)}",
+    pulse: rand(20..130),
+    temperature: rand(20..45),
+    spa02: rand,
+    user: users_array.sample,
+    hospital: hospitals_array.sample,
+    condition: conditions_array.sample
+  )
+end

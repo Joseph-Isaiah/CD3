@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_03_231551) do
+ActiveRecord::Schema.define(version: 2020_03_04_162210) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2020_03_03_231551) do
     t.bigint "hospital_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.jsonb "details"
+    t.jsonb "details", default: {}, null: false
     t.bigint "condition_id"
     t.index ["condition_id"], name: "index_calls_on_condition_id"
     t.index ["hospital_id"], name: "index_calls_on_hospital_id"
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 2020_03_03_231551) do
   create_table "conditions", force: :cascade do |t|
     t.string "name"
     t.bigint "category_id"
-    t.jsonb "fields"
+    t.jsonb "fields", default: {}, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_conditions_on_category_id"
