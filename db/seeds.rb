@@ -72,7 +72,7 @@ puts "creating conditions"
 puts "creating conditions for Medical"
 
 Condition.create!(
-  name: "Chest pain"
+  name: "Chest pain",
   category: Category.find_by(name: "Medical")
 )
 
@@ -80,8 +80,8 @@ Condition.create!(
 puts "creating conditions for Trauma"
 
 Condition.create!(
-  name: "Burn"
-  category:
+  name: "Burn",
+  category: Category.find_by(name: "Trauma")
 )
 
 puts "creating conditions for Pregnancy"
