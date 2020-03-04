@@ -5,5 +5,6 @@ class PagesController < ApplicationController
   end
 
   def kitchen_sink
+    @call = Call.new
   end
 end
