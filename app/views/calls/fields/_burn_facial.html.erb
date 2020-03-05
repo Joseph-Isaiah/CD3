@@ -1,0 +1,7 @@
+<div>
+  <h2>Facial Involvement:</h2>
+  <% field.values.each do |value| %>
+    <input type="radio" name="burn_facial_involvement_option" value="<%= value %>">
+    <label><%= value %></label>
+  <% end %>
+</div>
