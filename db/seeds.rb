@@ -146,15 +146,15 @@ Condition.create!(
   category: Category.find_by(name: "Trauma"),
   fields: {
     time_of_onset: { type: "string" },
-    smoke_inhalation: { type: "smoke_inhalation_options", values: ["None", "Brief", "Prolonged"] },
+    burn_smoke_inhalation: { type: "smoke_inhalation_options", values: ["None", "Brief", "Prolonged"] },
     breathing_difficulty: { type "boolean", values: ["Yes", "No"] },
-    context: { type: "burn_context_options", values: ["Flame", "Liquid", "Steam", "Chemical", "Electrical"] },
-    closed_space_entrapment: { type "boolean", values: ["Yes", "No"] },
-    facial_involvement: { type: "burn_facial_involvement_options", values: ["Mouth", "Lips", "Eyes", "Nares", "Ears"] },
-    location_of_burn: { type: "burn_body_part", values: ["Head", "Face", "Neck", "Torso", "Upper Extremeties", "Lower Extremeties", "Groin", "Hands", "Feet"] },
-    degree_of_burn: { type: "burn_degree", values: ["1st", "2nd", "3rd", "Other"] },
-    percentage: { type: "integer" },
-    meds: { type: "meds_options_burn", values: ["O2", "IV fluids", "Pain Meds", "Other"] },
+    burn_context: { type: "burn_context_options", values: ["Flame", "Liquid", "Steam", "Chemical", "Electrical"] },
+    burn_closed_space_entrapment: { type "boolean", values: ["Yes", "No"] },
+    burn_facial_involvement: { type: "burn_facial_involvement_options", values: ["Mouth", "Lips", "Eyes", "Nares", "Ears"] },
+    burn_location: { type: "burn_body_part", values: ["Head", "Face", "Neck", "Torso", "Upper Extremeties", "Lower Extremeties", "Groin", "Hands", "Feet"] },
+    burn_degree: { type: "burn_degree", values: ["1st", "2nd", "3rd", "Other"] },
+    burn_percentage: { type: "integer" },
+    burn_meds: { type: "meds_options_burn", values: ["O2", "IV fluids", "Pain Meds", "Other"] },
   }
 )
 
