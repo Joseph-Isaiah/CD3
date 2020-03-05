@@ -6,6 +6,7 @@ class CallsController < ApplicationController
 
   def create
     @call = Call.new(call_params)
+    raise
     @call.user = current_user
 
     if @call.save
