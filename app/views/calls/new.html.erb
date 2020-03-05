@@ -1,7 +1,7 @@
 <h1>Calls#new</h1>
 <p>Find me in app/views/calls/new.html.erb</p>
 
-<%= simple_form_for @call do |f| %>
+<%= simple_form_for @call, method: :post, url: calls_path do |f| %>
 
   <%= render "calls/fields/cards", f: f, items: Hospital.all %>
 

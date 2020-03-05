@@ -1,7 +1,7 @@
 <div>
   <h2>Medication Given:</h2>
   <% field.values.each do |value| %>
-    <input type="checkbox" name="burn_meds" value="<%= value %>">
+    <input type="checkbox" name="call[details[burn_meds][]" value="<%= value %>">
     <label><%= value %></label>
   <% end %>
 </div>

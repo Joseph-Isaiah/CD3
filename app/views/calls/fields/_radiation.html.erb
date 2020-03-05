@@ -1,7 +1,7 @@
 <div>
-  <h2>Radiation:</h2>
+  <h2>Radiating to:</h2>
   <% field.values.each do |value| %>
-    <input type="checkbox" name="call[details[radiation_option]]" value="<%= value %>">
+    <input type="checkbox" name="call[details[radiating_to]][]" value="<%= value %>">
     <label><%= value %></label>
   <% end %>
 </div>

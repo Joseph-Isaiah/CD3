@@ -1,7 +1,7 @@
 <div>
   <h2>Body Part</h2>
   <% field.values.each do |value| %>
-    <input type="checkbox" name="call[details[burn_body_part]]" value="<%= value %>">
+    <input type="checkbox" name="call[details[burn_location]][]" value="<%= value %>">
     <label><%= value %></label>
   <% end %>
 </div>

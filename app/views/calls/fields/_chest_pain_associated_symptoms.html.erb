@@ -1,7 +1,7 @@
 <div>
   <h2>Associated Symptoms:</h2>
   <% field.values.each do |value| %>
-    <input type="checkbox" name="call[details[associated_symptoms_option]" value="<%= value %>">
+    <input type="checkbox" name="call[details[chest_pain_associated_symptoms][]" value="<%= value %>">
     <label><%= value %></label>
   <% end %>
 </div>
