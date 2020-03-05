@@ -36,3 +36,85 @@
   background-color: #F09896;
 }
 
+
+
+
+ul {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+
+  & li {
+    position: relative;
+    list-style: none;
+    text-align: center;
+    margin: 0px;
+
+    & label {
+      position: relative;
+      cursor: pointer;
+
+      & input[type="checkbox"] {
+        position: absolute;
+        opacity: 0;
+      }
+
+      & :checked ~ .icon-box {
+        box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 1),
+              inset 3px 3px 5px rgba(0, 0, 0, 0.1);
+
+        & .fa {
+          transform: scale(0.95);
+        }
+      }
+
+      & .icon-box {
+        width: 280px;
+        height: 150px;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: -2px -2px 5px rgba(255, 255, 255, 1),
+              3px 3px 5px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+
+        & .medical {
+          font-family: 'Montserrat', sans-serif;
+          font-size: 30px;
+          color: #6a9bd8;
+          text-transform: uppercase;
+          font-style: normal;
+        }
+
+        & .trauma {
+          font-family: 'Montserrat', sans-serif;
+          font-size: 30px;
+          color: #DB162F;
+          text-transform: uppercase;
+          font-style: normal;
+        }
+
+        & .pregnancy {
+          font-family: 'Montserrat', sans-serif;
+          font-size: 30px;
+          color: #0CBE73;
+          text-transform: uppercase;
+          font-style: normal;
+        }
+
+        & .child {
+          font-family: 'Montserrat', sans-serif;
+          font-size: 30px;
+          color: #F09896;
+          text-transform: uppercase;
+          font-style: normal;
+        }
+
+      }
+    }
+  }
+}
