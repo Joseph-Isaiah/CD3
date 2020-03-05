@@ -145,16 +145,16 @@ Condition.create!(
   name: "Burn",
   category: Category.find_by(name: "Trauma"),
   fields: {
-    time_of_onset: "string",
-    smoke_inhalation: "smoke_inhalation_options",
-    breathing_difficulty: "boolean",
-    context: "context_options",
-    closed_space_entrapment: "boolean",
-    facial_involvement: "facial_involvement_options",
-    location_of_burn: "body_part",
-    degree_of_burn: "1-3_range",
-    percentage: "integer",
-    meds: "meds_options_burn"
+    time_of_onset: { type: "string" },
+    smoke_inhalation: { type: "smoke_inhalation_options", values: ["None", "Brief", "Prolonged"] },
+    breathing_difficulty: { type "boolean", values: ["Yes", "No"] },
+    context: { type: "burn_context_options", values: ["Flame", "Liquid", "Steam", "Chemical", "Electrical"] },
+    closed_space_entrapment: { type "boolean", values: ["Yes", "No"] },
+    facial_involvement: { type: "burn_facial_involvement_options", values: ["Mouth", "Lips", "Eyes", "Nares", "Ears"] },
+    location_of_burn: { type: "burn_body_part", values: ["Head", "Face", "Neck", "Torso", "Upper Extremeties", "Lower Extremeties", "Groin", "Hands", "Feet"] },
+    degree_of_burn: { type: "burn_degree", values: ["1st", "2nd", "3rd", "Other"] },
+    percentage: { type: "integer" },
+    meds: { type: "meds_options_burn", values: ["O2", "IV fluids", "Pain Meds", "Other"] },
   }
 )
 
