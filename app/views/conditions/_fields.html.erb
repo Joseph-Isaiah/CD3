@@ -1,6 +1,6 @@
 <h1><%= condition.name %></h1>
 <% condition.fields.each do |field| %>
-  <%  if field.name == 'chest_pain_quality' %>
+  <%  if field.name == 'chest_pain_meds' %>
     <%=  render "calls/fields/#{field.name}", field: field %>
   <% end %>
 <% end %>
