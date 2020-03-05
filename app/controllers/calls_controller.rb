@@ -11,9 +11,9 @@ class CallsController < ApplicationController
 
     if @call.save
       flash[:notice] = "Info sent"
-      render new_call_path
+      redirect_to new_call_path
     else
-      render new_call_path
+      redirect_to new_call_path
     end
   end
 
