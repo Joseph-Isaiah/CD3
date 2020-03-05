@@ -1,0 +1,7 @@
+<div>
+  <h2>Body Part</h2>
+  <% field.values.each do |value| %>
+    <input type="checkbox" name="burn_body_part" value="<%= value %>">
+    <label><%= value %></label>
+  <% end %>
+</div>
