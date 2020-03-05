@@ -1,6 +1,6 @@
 <h1><%= condition.name %></h1>
 <% condition.fields.each do |field| %>
-  <%  if field.name == 'STEMI' %>
-    <%=  render "calls/fields/#{field.name}", field: field %>
+  <%  if field.name == 'time_of_onset'%>
+    <%=  render "calls/fields/#{field.name}" %>
   <% end %>
 <% end %>
