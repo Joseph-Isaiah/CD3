@@ -1,11 +1,5 @@
 <% condition.fields.each do |field| %>
-<<<<<<< Updated upstream
   <%  if field.values == nil %>
-    <%=  render "calls/fields/#{field.name}" %>
-    <% else %>
-=======
-  <%  if field.name == "burn_facial" %>
->>>>>>> Stashed changes
     <%=  render "calls/fields/#{field.name}", field: field %>
   <% end %>
 <% end %>
