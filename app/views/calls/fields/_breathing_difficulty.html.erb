@@ -1,7 +1,7 @@
 <div>
   <h2>Breathing Difficulty:</h2>
   <% field.values.each do |value| %>
-    <input type="radio" name="breathing_difficulty-option" value="<%= value %>">
+    <input type="radio" name= "call[details[breathing_difficulty_option]]" value="<%= value %>">
     <label><%= value %></label>
   <% end %>
 </div>

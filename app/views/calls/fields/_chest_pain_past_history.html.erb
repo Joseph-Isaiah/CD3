@@ -1,7 +1,7 @@
 <div>
   <h2>Past History:</h2>
   <% field.values.each do |value| %>
-    <input type="checkbox" name="past_history-option" value="<%= value %>">
+    <input type="checkbox" name="call[details[past_history_option]]" value="<%= value %>">
     <label><%= value %></label>
   <% end %>
 </div>
