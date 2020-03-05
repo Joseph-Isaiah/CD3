@@ -5,5 +5,6 @@ class Call < ApplicationRecord
   belongs_to :hospital
   belongs_to :condition
 
+  validates :gender, :age, :blood_pressure, :pulse, :temperature, :spa02, :user, :hospital, :condition, presence: true
   validates :gender, inclusion: { in: VALID_GENDERS }
 end
