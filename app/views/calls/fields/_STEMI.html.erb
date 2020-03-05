@@ -1,0 +1,7 @@
+<div>
+  <h2>STEMI:</h2>
+  <% field.values.each do |value| %>
+    <input type="radio" name="onset-option" value="<%= value %>">
+    <label><%= value %></label>
+  <% end %>
+</div>
