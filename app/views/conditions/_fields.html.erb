@@ -1,7 +1,5 @@
 <% condition.fields.each do |field| %>
-  <%  if field.values == nil %>
-    <%=  render "calls/fields/#{field.name}" %>
-    <% else %>
+  <%  if field.name == "burn_closed_space" %>
     <%=  render "calls/fields/#{field.name}", field: field %>
   <% end %>
 <% end %>
