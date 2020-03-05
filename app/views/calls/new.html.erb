@@ -5,7 +5,6 @@
 
   <%= render "calls/fields/cards", f: f, items: Hospital.all %>
 
-  <%= f.association :condition, as: :radio_buttons, collection: Condition.all %>
   <%= f.input :gender, as: :radio_buttons, collection: Call::VALID_GENDERS %>
 
   <%= render "calls/fields/age", f: f %>
@@ -13,6 +12,12 @@
   <%= render "calls/fields/blood_pressure", f: f %>
   <%= render "calls/fields/temperature", f: f %>
   <%= render "calls/fields/spao2", f: f %>
+
+  <div class="js-condition-radio-buttons">
+    <%= f.association :condition, as: :radio_buttons, collection: Condition.all %>
+  </div>
+  ***********
+    <div id="form-type-options"></div>
   <%= f.button :submit, "Send" %>
 
 <% end %>

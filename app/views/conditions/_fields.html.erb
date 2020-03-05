@@ -1,0 +1,6 @@
+<h1><%= condition.name %></h1>
+<% condition.fields.each do |field| %>
+  <%  if field.name == 'timing' %>
+    <%=  render "calls/fields/#{field.name}", field: field %>
+  <% end %>
+<% end %>
