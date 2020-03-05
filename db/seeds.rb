@@ -92,7 +92,7 @@ Condition.create!(
     chest_pain_relieved_by: { type: "relieved_by_options", values: ["None", "Rest", "Nitro", "Other"] },
     STEMI: { type: "boolean", values: ["Yes", "No"] },
     time_of_onset: { type: "string" },
-    current_condition: { type: "current_condition_options", values: ["Still Present", "Better", "Worse", "Gone"] },
+    current_condition: { type: "current_condition_options"},
     severity: { type: "0-10_range" },
     # values not yet checked
 
