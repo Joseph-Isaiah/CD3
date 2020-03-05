@@ -6,10 +6,3 @@
   <% end %>
 </div>
 
-<div>
-  <h2>Associated Symptoms:</h2>
-  <% field.values.each do |value| %>
-    <input type="checkbox" name="associated_symptoms-option" value="<%= value %>">
-    <label><%= value %></label>
-  <% end %>
-</div>
