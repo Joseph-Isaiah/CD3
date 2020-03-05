@@ -13,6 +13,12 @@ Rails.application.routes.draw do
   end
 
   resources :calls, only: [:new, :create]
+
+  # hospitals/5/dashboard
+  resources :hospitals, only: [] do
+    get :dashboard, on: :member
+  end
+
   if Rails.env.development?
     get 'kitchen_sink', to: 'pages#kitchen_sink'
   end
