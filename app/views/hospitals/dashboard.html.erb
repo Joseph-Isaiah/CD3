@@ -1,0 +1,5 @@
+
+<%= @hospital.name %>
+<% @hospital.calls.each do |call| %>
+  <div><%= call.condition.name %></div>
+<% end %>
