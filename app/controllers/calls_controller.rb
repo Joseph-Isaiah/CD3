@@ -6,6 +6,7 @@ class CallsController < ApplicationController
 
   def create
     @call = Call.new(call_params)
+    @call.details = details_params
     raise
     @call.user = current_user
 
@@ -19,6 +20,12 @@ class CallsController < ApplicationController
   private
 
   def call_params
-    params.require(:call).permit(:gender, :age, :blood_pressure, :pulse, :temperature, :spa02, :condition_id, :hospital_id, :details)
+    params
+      .require(:call)
+      .permit(:gender, :age, :blood_pressure, :pulse, :temperature, :spa02, :condition_id, :hospital_id)
+  end
+
+  def details_params
+    params.require(:call).require(:details).permit(@call.permitted_fields)
   end
 end

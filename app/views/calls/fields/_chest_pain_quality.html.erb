@@ -1,7 +1,7 @@
 <div>
   <h2>Quality:</h2>
   <% field.values.each do |value| %>
-    <input type="checkbox" name="quality-option" value="<%= value %>">
+    <input type="checkbox" name="call[details[quality_option]]" value="<%= value %>">
     <label><%= value %></label>
   <% end %>
 </div>
