@@ -1,6 +1,7 @@
-<h1><%= condition.name %></h1>
 <% condition.fields.each do |field| %>
-  <%  if field.name == 'current_condition'%>
+  <%  if field.values == nil %>
     <%=  render "calls/fields/#{field.name}" %>
+    <% else %>
+    <%=  render "calls/fields/#{field.name}", field: field %>
   <% end %>
 <% end %>
