@@ -40,9 +40,9 @@ Hospital.create!(
 
 puts "Creating Paramedics"
 
-5.times do
+5.times do |n|
   User.create!(
-    email: Faker::Internet.email,
+    email: "paramedic#{n + 1}@user.com",
     password: 123456,
     name: Faker::Name.name,
     unit: Faker::Company.name
@@ -80,19 +80,22 @@ Condition.create!(
   name: "Chest pain",
   category: Category.find_by(name: "Medical"),
   fields: {
-    time_of_onset: "string",
-    meds: "meds_options_chest_pain",
-    timing: "timing_options",
-    current_condition: "current_condition_options",
-    onset: "onset_options",
-    severity: "0-10_range",
-    quality: "quality_options",
-    radiation: "body_part",
-    associated_symptoms: "associated_symptoms",
-    worsened_by: "worsened_by_options",
-    relieved_by: "relieved_by_options",
-    past_history: "past_history_options",
-    STEMI: "boolean"
+    # values checked
+    onset: { type: "onset_options", values: %w[sleep rest upset exertion] },
+    timing: { type: "timing_options", values: %w[sudden gradual] },
+    radiation: { type: "body_part_radiation", values: ["None", "Arm", "Shoulder", "Back", "Jaw"] },
+    chest_pain_quality: { type: "quality_options", values: ["Like Prior MI", "Squeezing", "Stabbing", "Burning", "Aching"] },
+    chest_pain_meds: { type: "meds_options_chest_pain", values: ["O2", "Aspirin", "Nitro", "IV Fluids", "Other"] },
+    chest_pain_associated_symptoms: { type: "associated_symptoms", values: ["Nausea", "Sweating", "SOB", "Dizziness", "Weakness", "Cough", "Palpitations"] },
+    chest_pain_past_history: { type: "past_history_options", values: ["Cardiac", "Diabetes", "PE", "Other"] },
+    chest_pain_worsened_by: { type: "chest_pain_worsened_by_options", values: ["Nothing", "Breathing", "Activity", "Position"] },
+    chest_pain_relieved_by: { type: "relieved_by_options", values: ["None", "Rest", "Nitro", "Other"] },
+    STEMI: { type: "boolean", values: ["Yes", "No"] },
+    time_of_onset: { type: "string" },
+    current_condition: { type: "current_condition_options", values: ["Still Present", "Better", "Worse", "Gone"] },
+    severity: { type: "0-10_range" },
+    # values not yet checked
+
   }
 )
 

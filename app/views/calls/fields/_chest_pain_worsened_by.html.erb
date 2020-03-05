@@ -1,0 +1,7 @@
+<div>
+  <h2>Worsened By:</h2>
+  <% field.values.each do |value| %>
+    <input type="checkbox" name="worsened_by-option" value="<%= value %>">
+    <label><%= value %></label>
+  <% end %>
+</div>

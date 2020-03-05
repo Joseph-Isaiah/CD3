@@ -1,6 +1,8 @@
 class Field
-  def initialize(name, type)
+  attr_reader :name, :type, :values
+  def initialize(name, data = {})
     @name = name
-    @type = type
+    @type = data["type"]
+    @values = data["values"]
   end
 end

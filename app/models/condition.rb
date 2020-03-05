@@ -3,8 +3,8 @@ class Condition < ApplicationRecord
   has_many :calls
 
   def fields
-    super.map do |name, type|
-      Field.new(name, type)
+    super.map do |name, data|
+      Field.new(name, data)
     end
   end
 end

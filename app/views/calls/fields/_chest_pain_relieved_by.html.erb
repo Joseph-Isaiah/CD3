@@ -1,0 +1,7 @@
+<div>
+  <h2>Relieved By:</h2>
+  <% field.values.each do |value| %>
+    <input type="checkbox" name="relieved_by-option" value="<%= value %>">
+    <label><%= value %></label>
+  <% end %>
+</div>
