@@ -88,9 +88,9 @@ Condition.create!(
     chest_pain_meds: { type: "meds_options_chest_pain", values: ["O2", "Aspirin", "Nitro", "IV Fluids", "Other"] },
     chest_pain_associated_symptoms: { type: "associated_symptoms", values: ["Nausea", "Sweating", "SOB", "Dizziness", "Weakness", "Cough", "Palpitations"] },
     chest_pain_past_history: { type: "past_history_options", values: ["Cardiac", "Diabetes", "PE", "Other"] },
-    chest_pain_worsened_by: { type: "chest_pain_worsened_by_options", ["Nothing", "Breathing", "Activity", "Position"] },
+    chest_pain_worsened_by: { type: "chest_pain_worsened_by_options", values: ["Nothing", "Breathing", "Activity", "Position"] },
     chest_pain_relieved_by: { type: "relieved_by_options", values: ["None", "Rest", "Nitro", "Other"] },
-    STEMI: { type: "boolean" }
+    STEMI: { type: "boolean" },
     time_of_onset: { type: "string" },
     current_condition: { type: "current_condition_options" },
     severity: { type: "0-10_range" },
