@@ -4,17 +4,12 @@ Rails.application.routes.draw do
     root to: "calls#new"
   end
 
-  # # /condition_fields/55
-  # resources :condition_fields, only: :show
-
-  # /conditions/55/fields
   resources :conditions, only: [] do
     get "fields", on: :member
   end
 
   resources :calls, only: [:new, :create]
 
-  # hospitals/5/dashboard
   resources :hospitals, only: [] do
     get :dashboard, on: :member, as: :dashboard
   end
