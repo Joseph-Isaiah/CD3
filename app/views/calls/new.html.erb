@@ -12,9 +12,18 @@
     <%= render "calls/fields/temperature", f: f %>
     <%= render "calls/fields/spao2", f: f %>
 
-    <div class="js-condition-radio-buttons">
-      <%= f.association :condition, as: :radio_buttons, collection: Condition.all %>
+    <div class="categories">
+      <% Category.all.each do |category| %>
+        <%= link_to category.name, "#", class: "btn btn-primary btn-condition #{category.slug} js-category-filter", "data-category": category.slug %>
+      <% end %>
     </div>
+
+    <div class="js-condition-radio-buttons js-category-filter-list">
+      <% Condition.all.each do |condition| %>
+        <div data-category="<%= condition.category.slug %>"><%= condition.name %></div>
+      <% end %>
+    </div>
+    <%= f.association :condition, as: :radio_buttons, collection: Condition.all %>
     ***********
       <div id="form-type-options"></div>
     <%= f.button :submit, "Send" %>
