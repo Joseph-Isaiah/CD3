@@ -1,7 +1,7 @@
 <% condition.fields.each do |field| %>
   <%  if field.values == nil %>
     <%=  render "calls/fields/#{field.name}" %>
-    <% else %>
+  <% else %>
     <%=  render "calls/fields/#{field.name}", field: field %>
   <% end %>
 <% end %>

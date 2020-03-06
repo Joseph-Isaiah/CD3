@@ -245,7 +245,7 @@ puts "creating calls"
 gender_array = ["female", "male"]
 
 20.times do
-  Call.create(
+  Call.create!(
     gender: gender_array.sample,
     age: rand(100),
     blood_pressure: "#{rand(60..180)}/#{rand(30..100)}",
@@ -257,3 +257,24 @@ gender_array = ["female", "male"]
     condition: conditions_array.sample
   )
 end
+
+Call.create!(
+  gender: gender_array.sample,
+  age: rand(100),
+  blood_pressure: "#{rand(60..180)}/#{rand(30..100)}",
+  pulse: rand(20..130),
+  temperature: rand(20..45),
+  spa02: rand,
+  user: users_array.sample,
+  hospital: Hospital.first,
+  condition: Condition.find_by(name: "Chest pain"),
+  details: {
+    STEMI: "Yes",
+    onset: "sleep",
+    timing: "gradual",
+    severity: "Bad"
+  }
+)
+
+
+
