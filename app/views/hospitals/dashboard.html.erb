@@ -1,8 +1,10 @@
-<h1><%= @hospital.name %></h1>
-<% @hospital.calls.each do |call| %>
-  <%if call.condition.name == "Chest pain" %>
-    <%= render "calls/condition/chest_pain", call: call %>
-  <% else %>
+<% if current_user.hospital %>
+  <h1><%= @hospital.name %></h1>
+  <% @hospital.calls.each do |call| %>
+    <%if call.condition.name == "Chest pain" %>
+      <%= render "calls/condition/chest_pain", call: call %>
+    <% else %>
     <%= render "calls/condition/burn", call: call %>
-  <% end %>
-<%end%>
+    <% end %>
+  <%end%>
+<% end %>
