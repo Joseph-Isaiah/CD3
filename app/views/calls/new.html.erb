@@ -1,23 +1,26 @@
-<h1>Calls#new</h1>
-<p>Find me in app/views/calls/new.html.erb</p>
+<% if current_user.hospital.nil? %>
+  <h1>Calls#new</h1>
+  <p>Find me in app/views/calls/new.html.erb</p>
 
-<%= simple_form_for @call, method: :post, url: calls_path do |f| %>
+  <%= simple_form_for @call, method: :post, url: calls_path do |f| %>
 
-  <%= render "calls/fields/cards", f: f, items: Hospital.all %>
+    <%= render "calls/fields/cards", f: f, items: Hospital.all %>
 
-  <%= f.input :gender, as: :radio_buttons, collection: Call::VALID_GENDERS %>
+    <%= f.input :gender, as: :radio_buttons, collection: Call::VALID_GENDERS %>
 
-  <%= render "calls/fields/age", f: f %>
-  <%= render "calls/fields/pulse", f: f %>
-  <%= render "calls/fields/blood_pressure", f: f %>
-  <%= render "calls/fields/temperature", f: f %>
-  <%= render "calls/fields/spao2", f: f %>
+    <%= render "calls/fields/age", f: f %>
+    <%= render "calls/fields/pulse", f: f %>
+    <%= render "calls/fields/blood_pressure", f: f %>
+    <%= render "calls/fields/temperature", f: f %>
+    <%= render "calls/fields/spao2", f: f %>
 
-  <div class="js-condition-radio-buttons">
-    <%= f.association :condition, as: :radio_buttons, collection: Condition.all %>
-  </div>
-  ***********
-    <div id="form-type-options"></div>
-  <%= f.button :submit, "Send" %>
+    <div class="js-condition-radio-buttons">
+      <%= f.association :condition, as: :radio_buttons, collection: Condition.all %>
+    </div>
+    ***********
+      <div id="form-type-options"></div>
+    <%= f.button :submit, "Send" %>
+
+  <% end %>
 
 <% end %>
