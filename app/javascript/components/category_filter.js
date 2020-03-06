@@ -7,10 +7,11 @@ const initCategoryFilter = () => {
       event.preventDefault()
 
       conditions.forEach((condition) => {
-        condition.style.display = "none"
+        const label = condition.closest("label")
+        label.style.display = "none"
 
         if(condition.dataset.category == filter.dataset.category) {
-          condition.style.display = "block"
+          label.style.display = "block"
         }
       })
     })

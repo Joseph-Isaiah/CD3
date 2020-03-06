@@ -1,1 +1,3 @@
-document.getElementById('form-type-options').insertAdjacentHTML('beforeend', '<%= j render "conditions/fields", condition: @condition %>')
+var typeOpt = document.getElementById('form-type-options')
+typeOpt.innerHTML = ""
+typeOpt.insertAdjacentHTML('beforeend', '<%= j render "conditions/fields", condition: @condition %>')

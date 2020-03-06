@@ -2,7 +2,9 @@
 
   <%= simple_form_for @call, method: :post, url: calls_path do |f| %>
 
-    <%= render "calls/fields/cards", f: f, items: Hospital.all %>
+    <div class="card-grid-hospital">
+      <%= render "calls/fields/cards", f: f, items: Hospital.all %>
+    </div>
 
     <%= f.input :gender, as: :radio_buttons, collection: Call::VALID_GENDERS %>
 
@@ -18,12 +20,10 @@
       <% end %>
     </div>
 
-    <div class="js-condition-radio-buttons js-category-filter-list">
-      <% Condition.all.each do |condition| %>
-        <div data-category="<%= condition.category.slug %>"><%= condition.name %></div>
-      <% end %>
+    <div class="js-condition-radio-buttons js-category-filter-list card-grid">
+      <%= render "calls/fields/cards", f: f, items: Condition.all %>
     </div>
-    <%= f.association :condition, as: :radio_buttons, collection: Condition.all %>
+
     ***********
       <div id="form-type-options"></div>
     <%= f.button :submit, "Send" %>
