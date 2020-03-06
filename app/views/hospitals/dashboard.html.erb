@@ -1,11 +1,12 @@
-
 <% if current_user.hospital %>
   <div class="call-wrapper">
+
     <div class="sidebar">
       <% @hospital.calls.each do |call| %>
         <%= render "hospitals/call_card", call: call %>
       <% end %>
     </div>
+
     <div class="content">
       <% @hospital.calls.each do |call| %>
     <div class = "container">
@@ -26,6 +27,7 @@
           <%= render "calls/condition/burn", call: call %>
         <% end %>
       </div>
+
      </div>
      <%end%>
     </div>

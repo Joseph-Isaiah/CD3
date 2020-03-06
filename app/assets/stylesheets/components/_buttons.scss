@@ -19,25 +19,22 @@
   }
 }
 
-#medical {
+#medical, .medical {
   // background-color: #2E4D89;
   background-color: #1fc8db;
 }
 
-#trauma {
+#trauma, .trauma {
   background-color: #DB162F;
 }
 
-#pregnancy {
+#pregnancy, .pregnancy {
   background-color: #0CBE73;
 }
 
-#child {
+#child, .child {
   background-color: #F09896;
 }
-
-
-
 
 ul {
   position: relative;
@@ -45,7 +42,6 @@ ul {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-
 
   & li {
     position: relative;

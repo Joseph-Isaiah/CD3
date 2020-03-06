@@ -13,11 +13,14 @@
 @import "pages/index";
 @import "components/banner";
 @import "fields/index";
-@import "hospitals/card";
-@import "components/buttons"
+@import "hospitals/index";
+@import "components/buttons";
 
+h1, h2 {
+  font-family: Montserrat;
+  font-weight: bold;
+}
 
-
-
-
-
+body {
+  font-family: Karla;
+}
