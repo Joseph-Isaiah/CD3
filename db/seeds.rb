@@ -53,8 +53,8 @@ puts "Creating Hospital Users"
 
 hospitals_array = Hospital.all
 
-hospitals_array.each do |hospital|
-  User.create!( name: hospital.name, email: Faker::Internet.email, password: 123456, unit: Faker::Company.name, hospital: hospital )
+hospitals_array.each_with_index do |hospital, index|
+  User.create!( name: hospital.name, email: "hospital#{index + 1}@user.com", password: 123456, unit: Faker::Company.name, hospital: hospital )
 end
 
 puts "Creating Categories"
