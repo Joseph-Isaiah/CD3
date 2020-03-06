@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   # hospitals/5/dashboard
   resources :hospitals, only: [] do
-    get :dashboard, on: :member
+    get :dashboard, on: :member, as: :dashboard
   end
 
   if Rails.env.development?
