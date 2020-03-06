@@ -1,6 +1,4 @@
 <% if current_user.hospital.nil? %>
-  <h1>Calls#new</h1>
-  <p>Find me in app/views/calls/new.html.erb</p>
 
   <%= simple_form_for @call, method: :post, url: calls_path do |f| %>
 
@@ -16,9 +14,16 @@
     <%= render "calls/fields/temperature", f: f %>
     <%= render "calls/fields/spao2", f: f %>
 
-    <div class="js-condition-radio-buttons card-grid">
+    <div class="categories">
+      <% Category.all.each do |category| %>
+        <%= link_to category.name, "#", class: "btn btn-primary btn-condition #{category.slug} js-category-filter", "data-category": category.slug %>
+      <% end %>
+    </div>
+
+    <div class="js-condition-radio-buttons js-category-filter-list card-grid">
       <%= render "calls/fields/cards", f: f, items: Condition.all %>
     </div>
+
     ***********
       <div id="form-type-options"></div>
     <%= f.button :submit, "Send" %>
