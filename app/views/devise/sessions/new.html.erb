@@ -1,20 +1,30 @@
-<h2>Log in</h2>
-
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email,
+<body style="background-color: #666666;">
+  <div class="limit">
+  <div class="container-login">
+  <div class="wrap-login">
+    <form class="login-form validate-form">
+    <span class="login-form-title pb-5">
+    Login to continue
+    </span>
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="form-inputs">
+      <%= f.input :email,
                 required: false,
                 autofocus: true,
                 input_html: { autocomplete: "email" } %>
-    <%= f.input :password,
+      <%= f.input :password,
                 required: false,
                 input_html: { autocomplete: "current-password" } %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-  </div>
+      <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+    </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
-  </div>
-<% end %>
+    <div class="form-actions login-form-btn">
+      <%= f.button :submit, "Log in" %>
+    </div>
+    <%= render "devise/shared/links" %>
+    <% end %>
+    <div class="login-more" style="background-image: url('https://images.unsplash.com/photo-1554734867-bf3c00a49371?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80');">
+    </div>
 
-<%= render "devise/shared/links" %>
+
+
