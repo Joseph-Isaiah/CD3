@@ -1,10 +1,25 @@
+
 <% if current_user.hospital %>
-  <h1><%= @hospital.name %></h1>
-  <% @hospital.calls.each do |call| %>
+<h1><%= @hospital.name %></h1>
+<% @hospital.calls.each do |call| %>
+<div class = "container">
+  <div class = "border">
+    <h2 class = "font-weight-bold"><%= call.condition.name %></h2>
+    <h3><%= call.age %></h3>
+    <h3><%= call.gender %></h3>
+    <h3><%= call.blood_pressure %></h3>
+    <h3><%= call.pulse %></h3>
+    <h3><%= call.temperature %></h3>
+    <h3><%= call.spa02 %></h3>
+  </div>
+
+  <div class="container border">
     <%if call.condition.name == "Chest pain" %>
       <%= render "calls/condition/chest_pain", call: call %>
     <% else %>
-    <%= render "calls/condition/burn", call: call %>
+      <%= render "calls/condition/burn", call: call %>
     <% end %>
-  <%end%>
-<% end %>
+  </div>
+ </div>
+ <%end%>
+
