@@ -1,27 +1,35 @@
-
 <% if current_user.hospital %>
-<h1><%= @hospital.name %></h1>
-<% @hospital.calls.each do |call| %>
-<div class = "container">
-  <div class = "border">
-    <h2 class = "font-weight-bold"><%= call.condition.name %></h2>
-    <h3>Age:<%= call.age %></h3>
-    <h3>Gender:<%= call.gender %></h3>
-    <h3>B/P:<%= call.blood_pressure %></h3>
-    <h3>Pulse:<%= call.pulse %></h3>
-    <h3>Temp:<%= call.temperature %></h3>
-    <h3>SpO2%<%= call.spa02 %></h3>
+  <div class="call-wrapper">
+
+    <div class="sidebar">
+      <% @hospital.calls.each do |call| %>
+        <%= render "hospitals/call_card", call: call %>
+      <% end %>
+    </div>
+
+    <div class="content">
+      <% @hospital.calls.each do |call| %>
+    <div class = "container">
+      <div class = "border">
+        <h2 class = "font-weight-bold"><%= call.condition.name %></h2>
+        <h3>Age:<%= call.age %></h3>
+        <h3>Gender:<%= call.gender %></h3>
+        <h3>B/P:<%= call.blood_pressure %></h3>
+        <h3>Pulse:<%= call.pulse %></h3>
+        <h3>Temp:<%= call.temperature %></h3>
+        <h3>SpO2%<%= call.spa02 %></h3>
+      </div>
+
+      <div class="container border">
+        <%if call.condition.name == "Chest pain" %>
+          <%= render "calls/condition/chest_pain", call: call %>
+        <% else %>
+          <%= render "calls/condition/burn", call: call %>
+        <% end %>
+      </div>
+
+     </div>
+     <%end%>
+    </div>
   </div>
-
-  <div class="container border">
-    <%if call.condition.name == "Chest pain" %>
-      <%= render "calls/condition/chest_pain", call: call %>
-    <% else %>
-      <%= render "calls/condition/burn", call: call %>
-    <% end %>
-  </div>
- </div>
  <%end%>
- <%end%>
-
-
