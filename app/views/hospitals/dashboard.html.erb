@@ -10,14 +10,15 @@
     <div class="content">
 
     <div class = "container">
-      <div class = "border">
-        <h2 class = "font-weight-bold"><%= @latest_call.condition.name %></h2>
-        <h3>Age:<%= @latest_call.age %></h3>
-        <h3>Gender:<%= @latest_call.gender %></h3>
-        <h3>B/P:<%= @latest_call.blood_pressure %></h3>
-        <h3>Pulse:<%= @latest_call.pulse %></h3>
-        <h3>Temp:<%= @latest_call.temperature %></h3>
-        <h3>SpO2%<%= @latest_call.spa02 %></h3>
+      <h2 class = "font-weight-bold"><%= @latest_call.condition.name %></h2>
+
+      <div class = "vital-signs">
+        <p><strong>Age: </strong><%= @latest_call.age %> </p>
+        <p><strong>Sex: </strong><%= @latest_call.gender %> </p>
+        <p><strong>B/P: </strong><%= @latest_call.blood_pressure %> </p>
+        <p><strong>Pulse: </strong><%= @latest_call.pulse %> </p>
+        <p><strong>Temp: </strong><%= @latest_call.temperature %>° </p>
+        <p><strong>SpO2%: </strong><%= @latest_call.spa02 %> </p>
       </div>
 
       <div class="container border">
