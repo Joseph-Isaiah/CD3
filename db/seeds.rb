@@ -1,4 +1,3 @@
-require "pry-byebug"
 Call.destroy_all
 Condition.destroy_all
 Category.destroy_all

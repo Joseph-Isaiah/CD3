@@ -30,3 +30,15 @@ img {
     padding: 1.25rem;
 }
 
+.card-grid {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.card-grid-hospital {
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
