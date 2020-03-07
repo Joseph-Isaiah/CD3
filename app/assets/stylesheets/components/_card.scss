@@ -4,19 +4,16 @@
     flex-direction: column;
     min-width: 0;
     word-wrap: break-word;
-    background-color: #fff;
     background-clip: border-box;
     border-radius: 10px;
     box-shadow: 0 4px 20px 1px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(0, 0, 0, 0.08);
     border: 0;
     margin-top: 10px;
+    background-color: #343a40;
+    color: #fff;
   }
 
-  .card-img-top {
-    width: 100%;
-    border-top-left-radius: calc(0.25rem - 1px);
-    border-top-right-radius: calc(0.25rem - 1px);
-}
+
 img {
     max-width: 100%;
 }
@@ -42,3 +39,6 @@ img {
   grid-gap: 16px;
 }
 
+h3, .h3 {
+    font-size: 1.35rem;
+}
