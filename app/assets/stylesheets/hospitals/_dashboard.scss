@@ -9,8 +9,19 @@
 .sidebar {
   flex-basis: 30vw; // Width of the flex element.
   display: flex;
-  flex-direction: column;
+  justify-content: flex-end;
+  flex-direction: column-reverse;
 }
 .content {
   flex-grow: 1;
+}
+
+.content p {
+  font-family: Karla;
+  font-size: 24px;
+}
+
+.vital-signs {
+  display: inline-flex;
+  justify-content: space-between;
 }
