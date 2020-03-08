@@ -11,6 +11,12 @@
     margin-top: 10px;
     background-color: #343a40;
     color: #fff;
+
+    &:hover{
+      border-color: #efefef3b;
+      border-width: 2px;
+      border-style: solid;
+    }
   }
 
 
@@ -37,8 +43,11 @@ img {
   display:grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
+  padding-left: 8%;
+  padding-right: 8%;
+  padding-top: 3%
 }
 
 h3, .h3 {
-    font-size: 1.35rem;
+    font-size: 1.25rem;
 }
