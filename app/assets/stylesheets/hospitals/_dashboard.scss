@@ -17,6 +17,7 @@ h2 {
   flex-direction: column;
   overflow-y: scroll;
 }
+
 .content {
   flex-grow: 1;
   overflow-y: scroll;
@@ -33,4 +34,8 @@ h2 {
 .vital-signs p {
   display: inline-block;
   margin-right: 12px;
+}
+
+.call-detail {
+  // background:
 }

@@ -9,7 +9,7 @@
     <p><strong>SpO2%: </strong><%= call.spa02 %> </p>
   </div>
 
-  <div class="container-border condition-fields">
+  <div class="condition-fields">
     <%if call.condition.name == "Chest pain" %>
       <%= render "calls/condition/chest_pain", call: call %>
     <% else %>
