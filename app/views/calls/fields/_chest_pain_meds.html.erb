@@ -1,5 +1,6 @@
 <div>
-  <h2>Medication Given:</h2>
+  <h2 class="btn btn-primary" data-toggle="collapse" href="#chest_pain_meds" role="button" aria-controls="collapse" >Medication Given:</h2>
+  <div class="collapse" id="chest_pain_meds">
   <% field.values.each do |value| %>
     <input type="checkbox" name="call[details[chest_pain_meds]][]" value="<%= value %>">
     <label><%= value %></label>
