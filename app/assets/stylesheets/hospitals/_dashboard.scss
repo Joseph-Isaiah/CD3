@@ -11,9 +11,11 @@
   display: flex;
   justify-content: flex-end;
   flex-direction: column-reverse;
+  overflow-y: scroll;
 }
 .content {
   flex-grow: 1;
+  overflow-y: scroll;
 }
 
 .content p {
@@ -22,7 +24,7 @@
   color: white;
 }
 
-.vital-signs {
-  display: inline-flex;
-  justify-content: space-between;
+.vital-signs p {
+  display: inline-block;
+  margin-right: 12px;
 }

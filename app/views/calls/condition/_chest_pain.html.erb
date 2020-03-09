@@ -1,3 +1,4 @@
 <% call.details.each do |detail| %>
-  <b><%= detail.name %>:</b> <%= detail.value %>
+  <p><b><%= detail.name.split('_').map{ |word| word.capitalize}.join(' ') %>:</b>
+    <%= detail.value.kind_of?(Array) ? detail.value.map{ |word| word.capitalize}.join(' ') : detail.value.capitalize  %></p>
 <% end %>
