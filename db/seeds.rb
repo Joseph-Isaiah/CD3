@@ -241,5 +241,23 @@ users_array = User.where(hospital_id: nil)
 
 puts "creating calls"
 
+
+# for testing hospital view:
+
+12.times do
+  Call.create!(
+     gender: 'male',
+     age: rand(99),
+     blood_pressure: 'High' ,
+     pulse: 80,
+     temperature: 70.8,
+     spa02: 9.00,
+     user: User.all.sample,
+     hospital: Hospital.all.sample,
+     details: {},
+     condition: Condition.all.sample,
+    )
+end
+
 gender_array = ["female", "male"]
 
