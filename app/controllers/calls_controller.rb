@@ -12,7 +12,10 @@ class CallsController < ApplicationController
     if @call.save
       ActionCable.server.broadcast(
         "hospital_#{@call.hospital.id}_calls",
-        render_to_string(partial: "hospitals/call_card", locals: { call: @call })
+        {
+          card: render_to_string(partial: "hospitals/call_card", locals: { call: @call }),
+          content: render_to_string(partial: "calls/show", locals: { call: @call }),
+        }
       )
       flash[:notice] = "Info sent"
       redirect_to new_call_path

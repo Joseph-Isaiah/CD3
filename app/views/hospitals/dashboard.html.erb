@@ -6,7 +6,7 @@
   </div>
   <div class="content">
 
-    <div class="call-info">
+    <div class="call-info" id="call-info">
       <% if @hospital.calls.any? %>
         <%= render "calls/show", call: @hospital.calls.last %>
       <% else %>
@@ -23,8 +23,11 @@
       hospital_id: <%= @hospital.id %>,
     }, {
         received: (data) => {
+          console.log(data)
           const callsBar = document.querySelector("#calls-bar");
-        callsBar.insertAdjacentHTML("beforeEnd", data);
+          callsBar.insertAdjacentHTML("beforeEnd", data.card);
+          const content = document.querySelector("#call-info");
+          content.insertAdjacentHTML("beforeEnd", data.content);
       }
     })
   </script>
