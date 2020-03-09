@@ -8,7 +8,9 @@
 
     <div class="call-info">
       <% if @hospital.calls.any? %>
-        <%= render "calls/show", call: @hospital.calls.last %>
+        <% @hospital.calls.each do |call| %>
+          <%= render "calls/show", call: call %>
+        <% end %>
       <% else %>
         <h2 class = "waiting for call">Waiting for Calls...</h2>
       <% end %>

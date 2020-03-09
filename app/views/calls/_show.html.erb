@@ -1,18 +1,20 @@
-<h2>#<%= call.condition.id %> <%= call.condition.name.upcase %></h2>
+<div class="call-detail">
+  <h2>#<%= call.id %> <%= call.condition.name.upcase %></h2>
 
-<div class="vital-signs">
-  <p><strong>Age: </strong><%= call.age %> </p>
-  <p><strong>Sex: </strong><%= call.gender.capitalize %> </p>
-  <p><strong>B/P: </strong><%= call.blood_pressure %> </p>
-  <p><strong>Pulse: </strong><%= call.pulse %> </p>
-  <p><strong>Temp: </strong><%= call.temperature %>° </p>
-  <p><strong>SpO2%: </strong><%= call.spa02 %> </p>
-</div>
+  <div class="vital-signs">
+    <p><strong>Age: </strong><%= call.age %> </p>
+    <p><strong>Sex: </strong><%= call.gender.capitalize %> </p>
+    <p><strong>B/P: </strong><%= call.blood_pressure %> </p>
+    <p><strong>Pulse: </strong><%= call.pulse %> </p>
+    <p><strong>Temp: </strong><%= call.temperature %>° </p>
+    <p><strong>SpO2%: </strong><%= call.spa02 %> </p>
+  </div>
 
-<div class="container-border">
-  <%if call.condition.name == "Chest pain" %>
-    <%= render "calls/condition/chest_pain", call: call %>
-  <% else %>
-    <%= render "calls/condition/burn", call: call %>
-  <% end %>
+  <div class="container-border condition-fields">
+    <%if call.condition.name == "Chest pain" %>
+      <%= render "calls/condition/chest_pain", call: call %>
+    <% else %>
+      <%= render "calls/condition/burn", call: call %>
+    <% end %>
+  </div>
 </div>
