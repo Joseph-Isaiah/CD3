@@ -1,52 +1,55 @@
 <div class="row">
-  <button type="button" class="btn btn-primary btn-condition medical">MEDICAL</button>
-  <button type="button" class="btn btn-primary btn-condition trauma">TRAUMA</button>
+  <button type="button" class="btn btn-condition medical">MEDICAL</button>
+  <button type="button" class="btn btn-condition trauma">TRAUMA</button>
 </div>
 
 <div class="row">
-  <button type="button" class="btn btn-primary btn-condition pregnancy">PREGNANCY</button>
-  <button type="button" class="btn btn-primary btn-condition child">CHILD</button>
+  <button type="button" class="btn btn-condition pregnancy">PREGNANCY</button>
+  <button type="button" class="btn btn-condition child">CHILD</button>
 </div>
 
-<br></br>
 
- <ul>
-    <li>
-      <label>
-        <input type="checkbox" name="">
-        <div class="icon-box">
-          <i class="medical" aria-hidden="true">Medical</i>
-          </div>
-      </label>
-    </li>
+<div class="option-group">
+  <div class="option-container">
 
-    <ul>
-    <li>
-      <label>
-        <input type="checkbox" name="">
-        <div class="icon-box">
-          <i class="trauma" aria-hidden="true">Trauma</i>
-          </div>
-      </label>
-    </li>
+    <input class="option-input" checked id="option-1" type="radio" name="options" />
+    <input class="option-input" id="option-2" type="radio" name="options" />
 
-    <ul>
-    <li>
-      <label>
-        <input type="checkbox" name="">
-        <div class="icon-box">
-          <i class="pregnancy" aria-hidden="true">Pregnancy</i>
-          </div>
-      </label>
-    </li>
+    <label class="option" for="option-1">
+      <span class="option__indicator"></span>
+      <span class="option__label">
+        MEDICAL<sub></sub>
+      </span>
+    </label>
 
-    <ul>
-    <li>
-      <label>
-        <input type="checkbox" name="">
-        <div class="icon-box">
-          <i class="child" aria-hidden="true">Child</i>
-          </div>
-      </label>
-    </li>
+    <label class="option traumas" for="option-2">
+      <span class="option__indicator"></span>
+      <span class="option__label">
+        TRAUMA
+      </span>
+    </label>
 
+  </div>
+</div>
+<div class="option-group">
+  <div class="option-container">
+
+    <input class="option-input" id="option-3" type="radio" name="options" />
+    <input class="option-input" id="option-4" type="radio" name="options" />
+
+    <label class="option pregnancies" for="option-3">
+      <span class="option__indicator"></span>
+      <span class="option__label">
+        PREGNANCY
+      </span>
+    </label>
+
+    <label class="option childs" for="option-4">
+      <span class="option__indicator"></span>
+      <span class="option__label">
+        CHILD
+      </span>
+    </label>
+
+  </div>
+</div>
