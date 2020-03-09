@@ -5,12 +5,12 @@
   flex-direction: column;
   justify-content: center;
   background-color: black;
-  border: 1px white;
+  border-bottom: 1px solid #222;
 
   // text
 
   color: white;
-  padding-left: 16px; // not a percentage?
+  padding: 16px; // not a percentage?
 }
 
 // can these be separated out bc only difference is size?
