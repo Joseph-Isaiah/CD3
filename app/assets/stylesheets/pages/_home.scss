@@ -1,1 +1,17 @@
 // Specific CSS for your home-page
+.home-dark {
+  height:700px;
+  background:#343a40e0;
+  background-image:
+  linear-gradient(to bottom, rgba(52, 58, 64, 0.99), rgba(21, 77, 128, 0.80)),
+  url('https://res.cloudinary.com/daak4feoa/image/upload/v1583617405/Emergency_n288pq.jpg');
+  background-size:cover;
+  position:relative;
+}
+
+.home-dark .illustration {
+  text-align:center;
+  padding:15px 0 20px;
+  font-size:100px;
+  color:#2980ef;
+}

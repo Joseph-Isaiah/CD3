@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   devise_scope :user do
-    root to: "calls#new"
+    root to: "pages#home"
   end
 
   resources :conditions, only: [] do

@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
     if current_user.hospital
       dashboard_hospital_path(current_user.hospital)
     else
-      root_path
+      new_call_path
     end
   end
 end
