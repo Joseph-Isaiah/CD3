@@ -1,4 +1,5 @@
 const initCategoryFilter = () => {
+  const categoryFilterList = document.querySelector(".js-category-filter-list")
   const categoryFilter = document.querySelectorAll(".js-category-filter")
   const conditions = document.querySelectorAll(".js-category-filter-list [data-category]")
 
@@ -13,6 +14,7 @@ const initCategoryFilter = () => {
         if(condition.dataset.category == filter.dataset.category) {
           label.style.display = "block"
         }
+        categoryFilterList.style.display = "grid"
       })
     })
   })
