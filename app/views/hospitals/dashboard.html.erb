@@ -1,12 +1,12 @@
 <div class="call-wrapper">
   <div class="sidebar"  id="calls-bar">
-    <% @hospital.calls.each do |call| %>
+    <% @hospital.calls.sort_by { |obj| obj.created_at }.reverse.each do |call| %>
       <%= render "hospitals/call_card", call: call %>
     <% end %>
   </div>
   <div class="content">
 
-    <div class="call-info">
+    <div class="call-info" id="call-info">
       <% if @hospital.calls.any? %>
         <% @hospital.calls.each do |call| %>
           <%= render "calls/show", call: call %>
@@ -25,8 +25,11 @@
       hospital_id: <%= @hospital.id %>,
     }, {
         received: (data) => {
+          console.log(data)
           const callsBar = document.querySelector("#calls-bar");
-        callsBar.insertAdjacentHTML("beforeEnd", data);
+          callsBar.insertAdjacentHTML("beforeEnd", data.card);
+          const content = document.querySelector("#call-info");
+          content.insertAdjacentHTML("beforeEnd", data.content);
       }
     })
   </script>

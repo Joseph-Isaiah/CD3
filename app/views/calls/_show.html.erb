@@ -1,6 +1,5 @@
-<div class="call-detail">
+<div class="call-detail" id="call-<%= call.id %>" style="display: none;">
   <h2>#<%= call.id %> <%= call.condition.name.upcase %></h2>
-
   <div class="vital-signs">
     <p><strong>Age: </strong><%= call.age %> </p>
     <p><strong>Sex: </strong><%= call.gender.capitalize %> </p>
