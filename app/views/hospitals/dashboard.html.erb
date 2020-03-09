@@ -12,11 +12,11 @@
     <div class="content">
 
     <div class = "container">
-      <h2 class = "font-weight-bold"><%= @latest_call.condition.name %></h2>
+      <h2 class = "font-weight-bold">#<%= @latest_call.condition.id %> <%= @latest_call.condition.name.capitalize %></h2>
 
       <div class = "vital-signs">
         <p><strong>Age: </strong><%= @latest_call.age %> </p>
-        <p><strong>Sex: </strong><%= @latest_call.gender %> </p>
+        <p><strong>Sex: </strong><%= @latest_call.gender.capitalize %> </p>
         <p><strong>B/P: </strong><%= @latest_call.blood_pressure %> </p>
         <p><strong>Pulse: </strong><%= @latest_call.pulse %> </p>
         <p><strong>Temp: </strong><%= @latest_call.temperature %>° </p>
