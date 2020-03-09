@@ -3,7 +3,7 @@
     <% if @latest_call == nil %>
         <h2 class = "waiting for call">Waiting for Calls...</h2>
     <% else %>
-    <div class="sidebar">
+    <div class="sidebar" id="calls-bar">
       <% @hospital.calls.each do |call| %>
         <%= render "hospitals/call_card", call: call %>
       <% end %>
@@ -35,3 +35,17 @@
     </div>
   </div>
  <%end%>
+
+ <% content_for :after_js do %>
+ <script>
+   App["hospital_<%= @hospital.id %>_calls"] = App.cable.subscriptions.create({
+    channel: 'HospitalChannel',
+    hospital_id: <%= @hospital.id %>,
+   }, {
+      received: (data) => {
+        const callsBar = document.querySelector("#calls-bar");
+        callsBar.insertAdjacentHTML("beforeEnd", data);
+      }
+    })
+ </script>
+ <% end %>

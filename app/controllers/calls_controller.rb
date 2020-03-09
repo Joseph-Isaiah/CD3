@@ -10,6 +10,10 @@ class CallsController < ApplicationController
     @call.user = current_user
 
     if @call.save
+      ActionCable.server.broadcast(
+        "hospital_#{@call.hospital.id}_calls",
+        render_to_string(partial: "hospitals/call_card", locals: { call: @call })
+      )
       flash[:notice] = "Info sent"
       redirect_to new_call_path
     else
