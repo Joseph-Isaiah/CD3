@@ -1,5 +1,3 @@
-const radios = document.querySelector(".js-condition-radio-buttons").querySelectorAll("[type=radio]");
-
 const handleRequestFields = (event) => {
   const id = event.currentTarget.value;
   const path = `/conditions/${id}/fields`
@@ -14,6 +12,7 @@ const handleRequestFields = (event) => {
 };
 
 const initConditionRadioButtons = () => {
+  const radios = document.querySelectorAll(".js-condition-radio-buttons [type=radio]");
   radios.forEach((radio) => {
     radio.addEventListener("change", handleRequestFields)
   })
