@@ -2,32 +2,40 @@
 
   <%= simple_form_for @call, method: :post, url: calls_path do |f| %>
 
-    <div class="card-grid-hospital">
-      <%= render "calls/fields/cards", f: f, items: Hospital.all %>
+    <div class="form-screen">
+      <div class="card-grid-hospital">
+        <%= render "calls/fields/cards", f: f, items: Hospital.all %>
+      </div>
     </div>
 
-    <%= f.input :gender, as: :radio_buttons, collection: Call::VALID_GENDERS %>
-
-    <%= render "calls/fields/age", f: f %>
-    <%= render "calls/fields/pulse", f: f %>
-    <%= render "calls/fields/blood_pressure", f: f %>
-    <%= render "calls/fields/temperature", f: f %>
-    <%= render "calls/fields/spao2", f: f %>
-
-    <div class="categories">
-      <% Category.all.each do |category| %>
-        <%= link_to category.name, "#", class: "btn btn-primary btn-condition #{category.slug} js-category-filter", "data-category": category.slug %>
-      <% end %>
+    <div class="form-screen">
+      <div class="categories">
+        <% Category.all.each do |category| %>
+          <%= link_to category.name, "#", class: "btn btn-primary btn-condition #{category.slug} js-category-filter scroll-next", "data-category": category.slug %>
+        <% end %>
+      </div>
     </div>
 
-    <div class="js-condition-radio-buttons js-category-filter-list card-grid">
-      <%= render "calls/fields/cards", f: f, items: Condition.all %>
+    <div class="form-screen">
+      <div class="js-condition-radio-buttons js-category-filter-list card-grid">
+        <%= render "calls/fields/cards", f: f, items: Condition.all %>
+      </div>
     </div>
 
-    ***********
+    <div class = "form-screen">
+      <%= f.input :gender, as: :radio_buttons, collection: Call::VALID_GENDERS %>
+      <%= render "calls/fields/age", f: f %>
+      <%= render "calls/fields/pulse", f: f %>
+      <%= render "calls/fields/blood_pressure", f: f %>
+      <%= render "calls/fields/temperature", f: f %>
+      <%= render "calls/fields/spao2", f: f %>
+      <button class= "btn-primary scroll-next" type = "button">Next</button>
+    </div>
+
+    <div class="form-screen">
       <div id="form-type-options"></div>
-    <%= f.button :submit, "Send", class: "btn btn-primary"%>
-
+      <%= f.button :submit, "Send", class: "btn btn-primary"%>
+    </div>
   <% end %>
 
 <% end %>

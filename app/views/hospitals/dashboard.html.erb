@@ -1,51 +1,31 @@
-<% if current_user.hospital %>
-  <div class="call-wrapper">
-    <% if @latest_call == nil %>
+<div class="call-wrapper">
+  <div class="sidebar"  id="calls-bar">
+    <% @hospital.calls.each do |call| %>
+      <%= render "hospitals/call_card", call: call %>
+    <% end %>
+  </div>
+  <div class="content">
+
+    <div class="call-info">
+      <% if @hospital.calls.any? %>
+        <%= render "calls/show", call: @hospital.calls.last %>
+      <% else %>
         <h2 class = "waiting for call">Waiting for Calls...</h2>
-    <% else %>
-    <div class="sidebar" id="calls-bar">
-      <% @hospital.calls.each do |call| %>
-        <%= render "hospitals/call_card", call: call %>
       <% end %>
-    </div>
-
-    <div class="content">
-
-    <div class = "container">
-      <h2 class = "font-weight-bold">#<%= @latest_call.condition.id %> <%= @latest_call.condition.name.capitalize %></h2>
-
-      <div class = "vital-signs">
-        <p><strong>Age: </strong><%= @latest_call.age %> </p>
-        <p><strong>Sex: </strong><%= @latest_call.gender.capitalize %> </p>
-        <p><strong>B/P: </strong><%= @latest_call.blood_pressure %> </p>
-        <p><strong>Pulse: </strong><%= @latest_call.pulse %> </p>
-        <p><strong>Temp: </strong><%= @latest_call.temperature %>° </p>
-        <p><strong>SpO2%: </strong><%= @latest_call.spa02 %> </p>
-      </div>
-
-      <div class="container border">
-        <%if @latest_call.condition.name == "Chest pain" %>
-          <%= render "calls/condition/chest_pain", call: @latest_call %>
-        <% else %>
-          <%= render "calls/condition/burn", call: @latest_call %>
-        <% end %>
-      </div>
-      <% end %>
-     </div>
     </div>
   </div>
- <%end%>
+</div>
 
- <% content_for :after_js do %>
- <script>
-   App["hospital_<%= @hospital.id %>_calls"] = App.cable.subscriptions.create({
-    channel: 'HospitalChannel',
-    hospital_id: <%= @hospital.id %>,
-   }, {
-      received: (data) => {
-        const callsBar = document.querySelector("#calls-bar");
+<% content_for :after_js do %>
+  <script>
+    App["hospital_<%= @hospital.id %>_calls"] = App.cable.subscriptions.create({
+      channel: 'HospitalChannel',
+      hospital_id: <%= @hospital.id %>,
+    }, {
+        received: (data) => {
+          const callsBar = document.querySelector("#calls-bar");
         callsBar.insertAdjacentHTML("beforeEnd", data);
       }
     })
- </script>
- <% end %>
+  </script>
+<% end %>
