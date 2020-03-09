@@ -7,7 +7,7 @@
 
   <div class="content">
 
-    <div class="container">
+    <div class="call-info">
       <% if @hospital.calls.any? %>
         <%= render "calls/show", call: @hospital.calls.last %>
       <% else %>
