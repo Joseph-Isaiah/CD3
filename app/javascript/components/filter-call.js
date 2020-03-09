@@ -11,7 +11,7 @@ const filterCall = (id) => {
   }
 }
 
-const handleClick = (event) => {
+const handleCallClick = (event) => {
   const target = event.currentTarget
   const id = target.dataset.callId
   filterCall(id)
@@ -20,7 +20,9 @@ const handleClick = (event) => {
 const initCallFiltering = () => {
   const callCards = document.querySelectorAll('.call-card');
   filterCall(callCards[0].dataset.callId);
-  callCards.forEach(call => call.addEventListener('click', handleClick ))
+  callCards.forEach(call => call.addEventListener('click', handleCallClick ))
+
+  window.handleCallClick = handleCallClick;
 }
 
 export {initCallFiltering}
