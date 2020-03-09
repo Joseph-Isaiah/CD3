@@ -1,6 +1,8 @@
 <% if current_user.hospital %>
   <div class="call-wrapper">
-
+    <% if @latest_call == nil %>
+        <h2 class = "waiting for call">Waiting for Calls...</h2>
+    <% else %>
     <div class="sidebar">
       <% @hospital.calls.each do |call| %>
         <%= render "hospitals/call_card", call: call %>
@@ -28,7 +30,7 @@
           <%= render "calls/condition/burn", call: @latest_call %>
         <% end %>
       </div>
-
+      <% end %>
      </div>
     </div>
   </div>
