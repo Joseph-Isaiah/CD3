@@ -20,7 +20,8 @@ class CallsController < ApplicationController
       flash[:notice] = "Info sent"
       redirect_to new_call_path
     else
-      redirect_to new_call_path
+      binding.pry
+      render :new
     end
   end
 
