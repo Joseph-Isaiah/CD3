@@ -27,10 +27,19 @@
     }, {
         received: (data) => {
           console.log(data)
+
+          const element = document.createElement("div");
           const callsBar = document.querySelector("#calls-bar");
-          callsBar.insertAdjacentHTML("beforeEnd", data.card);
+
+          element.innerHTML = data.card;
+          element.querySelector(".call-card").addEventListener("click", window.handleCallClick)
+
+          callsBar.insertAdjacentElement("afterBegin", element);
+
           const content = document.querySelector("#call-info");
           content.insertAdjacentHTML("beforeEnd", data.content);
+
+
       }
     })
   </script>

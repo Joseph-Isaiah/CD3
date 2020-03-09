@@ -9,21 +9,37 @@
     </div>
 
     <div class="form-screen">
-      <div class="categories">
-        <% Category.all.each do |category| %>
-          <%= link_to category.name, "#", class: "btn btn-primary btn-condition #{category.slug} js-category-filter scroll-next", "data-category": category.slug %>
-        <% end %>
+      <div class="container">
+          <div class="categories row">
+            <% Category.all.each do |category| %>
+              <div class="col-6 mb-5">
+                <%= link_to category.name, "#", class: "btn btn-primary btn-condition #{category.slug} js-category-filter scroll-next", "data-category": category.slug %>
+              </div>
+            <% end %>
+        </div>
       </div>
     </div>
 
     <div class="form-screen">
-      <div class="js-condition-radio-buttons js-category-filter-list card-grid">
+      <div class="js-condition-radio-buttons js-category-filter-list card-grid" style="display: none;">
         <%= render "calls/fields/cards", f: f, items: Condition.all %>
       </div>
     </div>
 
     <div class = "form-screen">
-      <%= f.input :gender, as: :radio_buttons, collection: Call::VALID_GENDERS %>
+      <h1>Vital Signs</h1>
+      <div class="wrapper">
+        <p>
+          <a class="btn btn-primary" data-toggle="collapse" href="#gender" role="button" aria-expanded="true" aria-controls="collapseExample">
+           Gender
+          </a>
+        </p>
+        <div class="collapse" id="gender">
+          <div class="card card-body">
+            <%= f.input :gender, as: :radio_buttons, wrapper: :no_legend_radio, legend: false, collection: Call::VALID_GENDERS %>
+          </div>
+        </div>
+      </div>
       <%= render "calls/fields/age", f: f %>
       <%= render "calls/fields/pulse", f: f %>
       <%= render "calls/fields/blood_pressure", f: f %>

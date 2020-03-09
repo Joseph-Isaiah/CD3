@@ -1,4 +1,12 @@
-  <div class="wrapper">
-    <%= f.label :blood_pressure %>
-    <%= f.text_field :blood_pressure %>
+<div class="wrapper">
+  <p>
+    <a class="btn btn-primary" data-toggle="collapse" href="#blood_pressure" role="button" aria-expanded = "false" aria-controls="collapseExample">
+      Blood Pressure
+    </a>
+  </p>
+  <div class="collapse" id="blood_pressure">
+    <div class="card card-body">
+      <%= f.text_field :blood_pressure %>
+    </div>
   </div>
+</div>

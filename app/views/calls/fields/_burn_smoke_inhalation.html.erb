@@ -1,7 +1,9 @@
 <div>
-  <h2>Smoke Inhalation:</h2>
-  <% field.values.each do |value| %>
-    <input type="radio" name="call[details[burn_smoke_inhalation]" value="<%= value %>">
-    <label><%= value %></label>
-  <% end %>
+  <h2 class="btn btn-primary" data-toggle="collapse" href="#burn_smoke_inhalation" role="button" aria-controls="collapse" >Smoke Inhalation:</h2>
+  <div class="collapse" id="burn_smoke_inhalation">
+    <% field.values.each do |value| %>
+      <input type="radio" name="call[details[burn_smoke_inhalation]" value="<%= value %>">
+      <label><%= value %></label>
+    <% end %>
+  </div>
 </div>

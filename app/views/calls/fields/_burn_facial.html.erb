@@ -1,7 +1,9 @@
 <div>
-  <h2>Facial Involvement:</h2>
-  <% field.values.each do |value| %>
-    <input type="checkbox" name="call[details[burn_facial][]" value="<%= value %>">
-    <label><%= value %></label>
-  <% end %>
+  <h2 class="btn btn-primary" data-toggle="collapse" href="#burn_facial" role="button" aria-controls="collapse">Facial Involvement:</h2>
+  <div class="collapse" id="burn_facial">
+    <% field.values.each do |value| %>
+      <input type="checkbox" name="call[details[burn_facial][]" value="<%= value %>">
+      <label><%= value %></label>
+    <% end %>
+  </div>
 </div>
