@@ -13,8 +13,8 @@ h2 {
 .sidebar {
   flex-basis: 30vw; // Width of the flex element.
   display: flex;
-  justify-content: flex-end;
-  flex-direction: column-reverse;
+  justify-content: flex-start;
+  flex-direction: column;
   overflow-y: scroll;
 }
 .content {
