@@ -80,19 +80,19 @@ Condition.create!(
   category: Category.find_by(name: "Medical"),
   fields: {
     # values checked
-    onset: { type: "onset_options", values: %w[sleep rest upset exertion] },
+    time_of_onset: { type: "string" },
     timing: { type: "timing_options", values: %w[sudden gradual] },
-    radiation: { type: "body_part_radiation", values: ["None", "Arm", "Shoulder", "Back", "Jaw"] },
+    severity: { type: "0-10_range" },
     chest_pain_quality: { type: "quality_options", values: ["Like Prior MI", "Squeezing", "Stabbing", "Burning", "Aching"] },
-    chest_pain_meds: { type: "meds_options_chest_pain", values: ["O2", "Aspirin", "Nitro", "IV Fluids", "Other"] },
-    chest_pain_associated_symptoms: { type: "associated_symptoms", values: ["Nausea", "Sweating", "SOB", "Dizziness", "Weakness", "Cough", "Palpitations"] },
+    onset: { type: "onset_options", values: %w[sleep rest upset exertion] },
+    radiation: { type: "body_part_radiation", values: ["None", "Arm", "Shoulder", "Back", "Jaw"] },
+    chest_pain_associated_symptoms: { type: "associated_symptoms", values: [ "None", "Nausea", "Sweating", "SOB", "Dizziness", "Weakness", "Cough", "Palpitations"] },
     chest_pain_past_history: { type: "past_history_options", values: ["Cardiac", "Diabetes", "PE", "Other"] },
+    chest_pain_meds: { type: "meds_options_chest_pain", values: ["O2", "Aspirin", "Nitro", "IV Fluids", "Other"] },
     chest_pain_worsened_by: { type: "chest_pain_worsened_by_options", values: ["Nothing", "Breathing", "Activity", "Position"] },
     chest_pain_relieved_by: { type: "relieved_by_options", values: ["None", "Rest", "Nitro", "Other"] },
-    STEMI: { type: "boolean", values: ["Yes", "No"] },
-    time_of_onset: { type: "string" },
     current_condition: { type: "current_condition_options"},
-    severity: { type: "0-10_range" },
+    STEMI: { type: "boolean", values: ["Yes", "No"] },
     # values not yet checked
 
   }
@@ -145,13 +145,13 @@ Condition.create!(
   category: Category.find_by(name: "Trauma"),
   fields: {
     time_of_onset: { type: "string" },
+    burn_context: { type: "burn_context_options", values: ["Flame", "Liquid", "Steam", "Chemical", "Electrical"] },
     burn_smoke_inhalation: { type: "smoke_inhalation_options", values: ["None", "Brief", "Prolonged"] },
     breathing_difficulty: { type: "boolean", values: ["Yes", "No"] },
-    burn_context: { type: "burn_context_options", values: ["Flame", "Liquid", "Steam", "Chemical", "Electrical"] },
     burn_closed_space: { type: "boolean", values: ["Yes", "No"] },
-    burn_facial: { type: "burn_facial_involvement_options", values: ["Mouth", "Lips", "Eyes", "Nares", "Ears"] },
+    burn_facial: { type: "burn_facial_involvement_options", values: [ "None", "Mouth", "Lips", "Eyes", "Nares", "Ears"] },
     burn_location: { type: "burn_body_part", values: ["Head", "Face", "Neck", "Torso", "Upper Extremeties", "Lower Extremeties", "Groin", "Hands", "Feet"] },
-    burn_degree: { type: "burn_degree", values: ["1st", "2nd", "3rd", "Other"] },
+    burn_degree: { type: "burn_degree", values: ["1st", "2nd", "3rd", "Multiple"] },
     burn_percentage: { type: "integer" },
     burn_meds: { type: "meds_options_burn", values: ["O2", "IV fluids", "Pain Meds", "Other"] },
   }
