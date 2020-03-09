@@ -1,6 +1,6 @@
 import Typed from 'typed.js';
 
-const loadDynamicSloganText = () => {
+const initLoadDynamicSloganText = () => {
   const sloganElement = document.querySelector("#slogan");
   if (!sloganElement) return;
 
@@ -11,4 +11,4 @@ const loadDynamicSloganText = () => {
   });
 }
 
-export { loadDynamicSloganText };
+export { initLoadDynamicSloganText };
