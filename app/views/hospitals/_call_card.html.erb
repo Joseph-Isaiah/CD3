@@ -1,6 +1,4 @@
 <div class="call-card <%= call.condition.category.name.downcase %>" data-call-id="<%= call.id %>">
   <h2 class="call-card-id">#<%= call.id %></h2>
-  <h3 class="call-card-category">
-    <%= call.condition.category.name %>
-  </h3>
+  <h3 class="call-card-condition"><%= call.condition.name %></h3>
 </div>

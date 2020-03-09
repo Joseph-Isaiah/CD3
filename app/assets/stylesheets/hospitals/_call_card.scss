@@ -9,26 +9,22 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: black;
   border-bottom: 1px solid #222;
   animation: fadeIn 1s;
-  border: 1px white;
+  cursor: pointer;
 
   // text
 
   color: white;
-  padding: 16px; // not a percentage?
+  padding: 16px;
 }
-
-// can these be separated out bc only difference is size?
 
 .call-card-id {
   font-size: 36px;
   color: white;
 }
 
-.call-card-category {
+.call-card-condition {
   font-size: 24px;
   color: white;
-
 }
