@@ -12,7 +12,7 @@
       <div class="container">
           <div class="categories row">
             <% Category.all.each do |category| %>
-              <div class="col-6 mb-4">
+              <div class="col-6 mb-5">
                 <%= link_to category.name, "#", class: "btn btn-primary btn-condition #{category.slug} js-category-filter scroll-next", "data-category": category.slug %>
               </div>
             <% end %>
