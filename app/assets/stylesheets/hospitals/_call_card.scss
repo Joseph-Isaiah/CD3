@@ -1,3 +1,8 @@
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateX(-100%); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
 .call-card {
   height: 120px;
   width: 100%;
@@ -6,6 +11,8 @@
   justify-content: center;
   background-color: black;
   border-bottom: 1px solid #222;
+  animation: fadeIn 1s;
+  border: 1px white;
 
   // text
 

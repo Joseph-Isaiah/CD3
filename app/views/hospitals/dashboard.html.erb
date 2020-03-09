@@ -1,10 +1,9 @@
 <div class="call-wrapper">
-  <div class="sidebar">
+  <div class="sidebar"  id="calls-bar">
     <% @hospital.calls.each do |call| %>
       <%= render "hospitals/call_card", call: call %>
     <% end %>
   </div>
-
   <div class="content">
 
     <div class="call-info">
@@ -16,3 +15,17 @@
     </div>
   </div>
 </div>
+
+<% content_for :after_js do %>
+  <script>
+    App["hospital_<%= @hospital.id %>_calls"] = App.cable.subscriptions.create({
+      channel: 'HospitalChannel',
+      hospital_id: <%= @hospital.id %>,
+    }, {
+        received: (data) => {
+          const callsBar = document.querySelector("#calls-bar");
+        callsBar.insertAdjacentHTML("beforeEnd", data);
+      }
+    })
+  </script>
+<% end %>
