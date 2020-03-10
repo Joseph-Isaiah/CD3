@@ -1,8 +1,12 @@
-<div class="card mb-3">
-  <h3 class="card-header"><%= hospital.name %></h3>
-  <img class="img-gradient" style="height: 200px; width: 100%; display: block;" src="https://www.ohiohealth.com/siteassets/find-a-location/all-location-images/columbus/3535-olentangy-river-road-columbus-neurocenter-location-card.jpg" alt="Card image">
-  <div class="card-body">
-    <p class="card-text"><%= hospital.address %></p>
-  </div>
-</div>
+<%= cl_image_tag hospital.photo.key,
+  alt: hospital.name,
+  class: "img-gradient",
+  width: 330,
+  height: 100,
+  crop: :fill
+%>
+<div class="card-body">
+  <h3><%= hospital.name %></h3>
 
+  <p class="card-text"><small><%= hospital.address %></small></p>
+</div>
