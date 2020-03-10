@@ -27,19 +27,23 @@
     </div>
 
     <div class = "form-screen">
+      <div class="container">
       <h1>Vital Signs</h1>
-      <div class="wrapper">
-        <div class="card card-body">
+      <div class="wrapper card card-body">
+        <div class="form-check form-check-inline">
           <%= f.label :gender %>
-          <%= f.input :gender, as: :radio_buttons, wrapper: :no_legend_radio, legend: false, collection: Call::VALID_GENDERS %>
+          <%= f.input :gender, as: :radio_buttons, wrapper: :no_legend_radio, item_wrapper_class: 'custom-control-inline custom-radio', collection: Call::VALID_GENDERS %>
         </div>
-      </div>
+
       <%= render "calls/fields/age", f: f %>
       <%= render "calls/fields/pulse", f: f %>
       <%= render "calls/fields/blood_pressure", f: f %>
       <%= render "calls/fields/temperature", f: f %>
       <%= render "calls/fields/spao2", f: f %>
-      <button class= "btn-primary scroll-next" type = "button">Next</button>
+      <button class= "btn-primary scroll-next mx-auto" type = "button">Next</button>
+      </div>
+
+      </div>
     </div>
 
     <div class="form-screen">
