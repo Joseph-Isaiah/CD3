@@ -215,3 +215,8 @@
   .option__label,
   .option__label::after { transform: scale(1); }
 }
+
+.labl > input:checked + div {
+    background-color: transparent;
+    border: 1px solid transparent;
+}
