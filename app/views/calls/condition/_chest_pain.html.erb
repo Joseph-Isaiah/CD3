@@ -1,10 +1,6 @@
 <% call.details.each do |detail| %>
-  <p><b><%=
-  detail.name
-  .split('_')
-  .select{ |word| !['chest', 'pain'].include?(word)}
-  .map{ |word| word.capitalize}
-  .join(' ')
-  %>:</b>
-    <%= detail.value.kind_of?(Array) ? detail.value.map{ |word| word.capitalize}.join(' ') : detail.value.capitalize  %></p>
+  <p>
+    <b><%= detail.name.split('_').select{ |word| !['chest', 'pain'].include?(word)}.map{ |word| word.capitalize}.join(' ') %>:</b>
+    <%= detail.value.kind_of?(Array) ? detail.value.map{ |word| word.capitalize}.join(' ') : detail.value.capitalize  %>
+  </p>
 <% end %>

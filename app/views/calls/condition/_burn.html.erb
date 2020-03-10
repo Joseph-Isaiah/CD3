@@ -1,9 +1,6 @@
 <% call.details.each do |detail| %>
-  <b><%= detail.name
-  .split('_')
-  .select{ |word| !['burn'].include?(word) }
-  .map{ |word| word.capitalize}
-  .join(' ')
-  %>:</b>
-    <%= detail.value.kind_of?(Array) ? detail.value.map { |word| word.capitalize }.join(' ') : detail.value.capitalize %></p>
+  <p>
+    <b><%= detail.name.split('_').select{ |word| !['burn'].include?(word) }.map{ |word| word.capitalize}.join(' ') %>:</b>
+    <%= detail.value.kind_of?(Array) ? detail.value.map { |word| word.capitalize }.join(' ') : detail.value.capitalize %>
+  </p>
 <% end %>
