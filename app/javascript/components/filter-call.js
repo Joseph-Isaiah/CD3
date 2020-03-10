@@ -19,7 +19,9 @@ const handleCallClick = (event) => {
 
 const initCallFiltering = () => {
   const callCards = document.querySelectorAll('.call-card');
-  filterCall(callCards[0].dataset.callId);
+
+  if (callCards.length > 0) filterCall(callCards[0].dataset.callId);
+
   callCards.forEach(call => call.addEventListener('click', handleCallClick ))
 
   window.handleCallClick = handleCallClick;

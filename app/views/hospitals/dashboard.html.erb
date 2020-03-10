@@ -8,12 +8,8 @@
   <div class="content">
 
     <div class="call-info" id="call-info">
-      <% if @hospital.calls.any? %>
-        <% @hospital.calls.each do |call| %>
-          <%= render "calls/show", call: call %>
-        <% end %>
-      <% else %>
-        <h2 class = "waiting for call">Waiting for Calls...</h2>
+      <% @hospital.calls.each do |call| %>
+        <%= render "calls/show", call: call %>
       <% end %>
     </div>
   </div>
