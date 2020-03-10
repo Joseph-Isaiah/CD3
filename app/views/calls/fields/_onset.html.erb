@@ -1,9 +1,7 @@
 <div>
-  <h2 class="btn btn-primary" data-toggle="collapse" href="#onset" role="button" aria-controls="collapse">Onset:</h2>
-  <div class="collapse" id="onset">
-    <% field.values.each do |value| %>
-      <input type="radio" name="call[details[onset]]" value="<%= value %>">
-      <label><%= value %></label>
-    <% end %>
-  </div>
+  <h2>Onset:</h2>
+  <% field.values.each do |value| %>
+    <input type="radio" name="call[details[onset]]" value="<%= value %>">
+    <label><%= value %></label>
+  <% end %>
 </div>
