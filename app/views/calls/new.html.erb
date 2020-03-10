@@ -29,15 +29,9 @@
     <div class = "form-screen">
       <h1>Vital Signs</h1>
       <div class="wrapper">
-        <p>
-          <a class="btn btn-primary" data-toggle="collapse" href="#gender" role="button" aria-expanded="true" aria-controls="collapseExample">
-           Gender
-          </a>
-        </p>
-        <div class="collapse" id="gender">
-          <div class="card card-body">
-            <%= f.input :gender, as: :radio_buttons, wrapper: :no_legend_radio, legend: false, collection: Call::VALID_GENDERS %>
-          </div>
+        <div class="card card-body">
+          <%= f.label :gender %>
+          <%= f.input :gender, as: :radio_buttons, wrapper: :no_legend_radio, legend: false, collection: Call::VALID_GENDERS %>
         </div>
       </div>
       <%= render "calls/fields/age", f: f %>

@@ -1,9 +1,7 @@
 <div>
-  <h2 class="btn btn-primary" data-toggle="collapse" href="#stemi" role="button" aria-controls="collapse">STEMI:</h2>
-  <div class="collapse" id="stemi">
+  <h2>STEMI:</h2>
     <% field.values.each do |value| %>
       <input type="radio" name="call[details[STEMI]]" value="<%= value %>">
       <label><%= value %></label>
     <% end %>
-  </div>
 </div>
