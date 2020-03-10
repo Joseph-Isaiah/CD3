@@ -1,3 +1,2 @@
-var typeOpt = document.getElementById('form-type-options')
-typeOpt.innerHTML = ""
-typeOpt.insertAdjacentHTML('beforeend', '<%= j render "conditions/fields", condition: @condition %>')
+var multiScreenForm = document.querySelector('.multi-screen-form')
+multiScreenForm.insertAdjacentHTML('beforeEnd', '<%= j render "conditions/fields", fields_per_screen: 5, condition: @condition %>')
