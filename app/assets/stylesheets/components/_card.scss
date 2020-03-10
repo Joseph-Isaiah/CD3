@@ -36,7 +36,6 @@ img {
 
 .card-grid {
   display:grid;
-  width: 100vw;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
 }
@@ -45,9 +44,6 @@ img {
   display:grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
-  padding-left: 1%;
-  padding-right: 1%;
-  padding-top: 3%
 }
 
 h3, .h3 {

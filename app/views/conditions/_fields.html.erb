@@ -4,9 +4,9 @@
   <% end %>
 
   <%  if field.values == nil %>
-    <%=  render "calls/fields/#{field.name}" %>
+    <%=  render "calls/fields/#{field.type}", field: field %>
   <% else %>
-    <%=  render "calls/fields/#{field.name}", field: field %>
+    <%=  render "calls/fields/#{field.type}", field: field %>
   <% end %>
 
   <% if condition.fields.length - 1 == index %>

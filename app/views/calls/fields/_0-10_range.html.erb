@@ -1,0 +1,10 @@
+<h2><%= field.name.humanize %></h2>
+
+<% 11.times do |n| %>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="call[details[<%= field.name %>]" id="<%= n %>" value="<%= n %>" checked>
+    <label class="form-check-label" for="<%= n %>">
+      <%= n %>
+    </label>
+  </div>
+<% end %>
