@@ -25,20 +25,24 @@
       hospital_id: <%= @hospital.id %>,
     }, {
         received: (data) => {
-          console.log(data)
-
-          const element = document.createElement("div");
+          // When a broadcast is received to the hospital
           const callsBar = document.querySelector("#calls-bar");
+          const content = document.querySelector("#call-info");
 
+          // Create an element to receive the card to the bar
+          const element = document.createElement("div");
+          // Add the call card partial to the element
           element.innerHTML = data.card;
+          // Assign the handleCallClick behavior to the card
           element.querySelector(".call-card").addEventListener("click", window.handleCallClick)
-
+          // Push the element into the cards bar
           callsBar.insertAdjacentElement("afterBegin", element);
 
-          const content = document.querySelector("#call-info");
+          // Push the content of the call into the content bar
           content.insertAdjacentHTML("beforeEnd", data.content);
 
-
+          // Change the currently shown content, to the current call
+          window.filterCall(data.id)
       }
     })
   </script>
