@@ -1,7 +1,19 @@
-<% condition.fields.each do |field| %>
+<% condition.fields.each_with_index do |field, index| %>
+  <% if (index % fields_per_screen).zero? %>
+    <div class="form-screen">
+  <% end %>
+
   <%  if field.values == nil %>
     <%=  render "calls/fields/#{field.name}" %>
   <% else %>
     <%=  render "calls/fields/#{field.name}", field: field %>
+  <% end %>
+
+  <% if condition.fields.length - 1 == index %>
+      <input type="submit" name="commit" value="Send" class="btn btn btn-primary" data-disable-with="Send">
+    </div>
+  <% elsif (index % fields_per_screen) == (fields_per_screen - 1) %>
+      <button class= "btn-primary scroll-next" type = "button">Next</button>
+    </div>
   <% end %>
 <% end %>

@@ -1,6 +1,6 @@
 <% if current_user.hospital.nil? %>
 
-  <%= simple_form_for @call, method: :post, url: calls_path do |f| %>
+  <%= simple_form_for @call, method: :post, url: calls_path, html: { class: "multi-screen-form" } do |f| %>
 
     <div class="form-screen">
       <div class="card-grid-hospital">
@@ -40,11 +40,6 @@
       <%= render "calls/fields/temperature", f: f %>
       <%= render "calls/fields/spao2", f: f %>
       <button class= "btn-primary scroll-next" type = "button">Next</button>
-    </div>
-
-    <div class="form-screen">
-      <div id="form-type-options"></div>
-      <%= f.button :submit, "Send", class: "btn btn-primary"%>
     </div>
   <% end %>
 
