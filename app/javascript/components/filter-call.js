@@ -1,7 +1,7 @@
 const filterCall = (id) => {
   const callContainer = document.getElementById('call-info');
   const selectedCall = Array.from(callContainer.children).find((call) => {
-    return call.id.replace('call-', '') === id;
+    return call.id.replace('call-', '') === id.toString();
   })
   if (selectedCall) {
     Array.from(callContainer.children).forEach((call) => {
@@ -23,6 +23,7 @@ const initCallFiltering = () => {
   callCards.forEach(call => call.addEventListener('click', handleCallClick ))
 
   window.handleCallClick = handleCallClick;
+  window.filterCall = filterCall;
 }
 
 export {initCallFiltering}
