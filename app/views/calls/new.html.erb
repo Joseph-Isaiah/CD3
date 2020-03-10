@@ -1,6 +1,6 @@
 <% if current_user.hospital.nil? %>
 
-  <%= simple_form_for @call, method: :post, url: calls_path do |f| %>
+  <%= simple_form_for @call, method: :post, url: calls_path, html: { class: "multi-screen-form" } do |f| %>
 
     <div class="form-screen">
       <div class="container">
@@ -15,7 +15,7 @@
           <div class="categories row">
             <% Category.all.each do |category| %>
               <div class="col-6 mb-5">
-                <%= link_to category.name, "#", class: "btn btn-primary btn-condition #{category.slug} js-category-filter scroll-next", "data-category": category.slug %>
+                <%= link_to category.name, "#", class: "btn btn-condition #{category.slug} js-category-filter scroll-next", "data-category": category.slug %>
               </div>
             <% end %>
         </div>
@@ -41,11 +41,6 @@
         </div>
         <button class= "btn btn-primary btn-lg btn-block scroll-next" type = "button">Next</button>
       </div>
-    </div>
-
-    <div class="form-screen">
-      <div id="form-type-options"></div>
-      <%= f.button :submit, "Send", class: "btn btn-primary"%>
     </div>
   <% end %>
 

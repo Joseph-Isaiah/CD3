@@ -4,38 +4,44 @@ Category.destroy_all
 User.destroy_all
 Hospital.destroy_all
 
-
 puts "Creating Hospitals"
 
-Hospital.create!(
+h1 = Hospital.create!(
   name: "Doctors Hospital",
   address: "5100 West Broad Street, Columbus, OH, 43228"
 )
+h1.photo.attach(io: File.open('fixtures/doctors-hospital.jpeg'), filename: 'doctors-hospital.jpeg')
 
-Hospital.create!(
+h2 = Hospital.create!(
   name: "Dublin Methodist Hospital",
   address: "7500 Hospital Drive, Dublin, OH, 43016"
 )
+h2.photo.attach(io: File.open('fixtures/dublin-methodist-hospital.jpg'), filename: 'dublin-methodist-hospital.jpg')
 
-Hospital.create!(
+h3 = Hospital.create!(
   name: "Grant Medical Center",
   address: "111 South Grant Avenue, Colombus, OH, 43215"
 )
+h3.photo.attach(io: File.open('fixtures/grant-hospital.jpg'), filename: 'grant-hospital.jpg')
 
-Hospital.create!(
+h4 = Hospital.create!(
   name: "Riverside Methodist Hospital",
   address: "3535 Olentangy River Road, Colombus, OH, 43214"
 )
+h4.photo.attach(io: File.open('fixtures/riverside-methodist.jpg'), filename: 'riverside-methodist.jpg')
 
-Hospital.create!(
+h5 = Hospital.create!(
   name: "Ohio State University Medical Center",
   address: "410 West 10th Avenue, Colombus, Ohio, 43210"
 )
+h5.photo.attach(io: File.open('fixtures/university-hospital.jpg'), filename: 'university-hospital.jpg')
 
-Hospital.create!(
+h6 = Hospital.create!(
   name: "Mount Carmel East",
   address: "6001 East Broad Street, Columbus, Ohio, 43213"
 )
+h6.photo.attach(io: File.open('fixtures/mount-carmel-east.jpg'), filename: 'mount-carmel-east.jpg')
+
 
 puts "Creating Paramedics"
 
