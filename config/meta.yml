@@ -1,0 +1,5 @@
+meta_product_name: "CODE 3"
+meta_title: "CODE 3 - Save time. Save life."
+meta_description: "Founded with one goal: Save lives. Code 3 is a small start-up breaking the mold of emergency medical communication."
+meta_image: "cover.png" # should exist in `app/assets/images/`
+twitter_account: "@CD3"   # required for Twitter Cards
