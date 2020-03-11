@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   end
 
   resources :calls, only: [:new, :create]
+  namespace :call do
+    get "emergencies", to: "emergencies#create"
+  end
 
   resources :hospitals, only: [] do
     get :dashboard, on: :member, as: :dashboard

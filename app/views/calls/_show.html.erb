@@ -1,13 +1,16 @@
 <div class="call-detail" id="call-<%= call.id %>" style="display: none;">
-  <h2 class="<%= call.condition.category.slug %>">#<%= call.id %> <%= call.condition.name %></h2>
-  <div class="vital-signs">
-    <p><strong>Age: </strong><%= call.age %> </p>
-    <p><strong>Sex: </strong><%= call.gender.capitalize %> </p>
-    <p><strong>B/P: </strong><%= call.blood_pressure %> </p>
-    <p><strong>Pulse: </strong><%= call.pulse %> </p>
-    <p><strong>Temp: </strong><%= call.temperature %>° </p>
-    <p><strong>SpO2%: </strong><%= call.spa02 %> </p>
-  </div>
+    <h2 class="<%= call.condition.category.slug %>">#<%= call.id %> <%= call.condition.name %></h2>
+    <% if call.critical  == true %>
+    <h1>Critical Patient Arriving!</h1>
+  <% else %>
+    <div class="vital-signs">
+      <p><strong>Age: </strong><%= call.age %> </p>
+      <p><strong>Sex: </strong><%= call.gender.capitalize %> </p>
+      <p><strong>B/P: </strong><%= call.blood_pressure %> </p>
+      <p><strong>Pulse: </strong><%= call.pulse %> </p>
+      <p><strong>Temp: </strong><%= call.temperature %>° </p>
+      <p><strong>SpO2%: </strong><%= call.spa02 %> </p>
+    </div>
 
   <div class="condition-fields">
     <%if call.condition.name == "Chest pain" %>
@@ -16,4 +19,5 @@
       <%= render "calls/condition/burn", call: call %>
     <% end %>
   </div>
+  <% end %>
 </div>
