@@ -1,0 +1,50 @@
+.form-call-legend {
+  font-size: 1rem;
+}
+
+.form-call {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 0.5rem;
+  width: 100%;
+
+  label {
+    position: relative;
+    margin: 0;
+
+    > div {
+      background-color: #a00;
+      padding: 1rem 1rem 1rem 4rem;
+      border-radius: 4px;
+    }
+
+    > input:checked + div {
+      background-color: #0a0;
+    }
+  }
+
+  input {
+    position: absolute;
+    top: 1.325rem;
+    left: 1.5rem;
+  }
+
+  &.form-call-boolean {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &.form-call-checkbox {
+  }
+
+  &.form-call-percentage {
+    grid-template-columns: repeat(11, 1fr);
+  }
+
+  &.form-call-radiobutton {
+  }
+
+  &.form-call-range {
+    grid-template-columns: repeat(11, 1fr);
+  }
+}
+

@@ -1,7 +1,11 @@
 <% condition.fields.each_with_index do |field, index| %>
   <% if (index % fields_per_screen).zero? %>
     <div class="form-screen">
+      <div class="container-fluid">
+        <div class="row justify-content-center">
+          <div class="col-4">
   <% end %>
+  <!-- Don't look up -->
 
   <%  if field.values == nil %>
     <%=  render "calls/fields/#{field.type}", field: field %>
@@ -9,11 +13,18 @@
     <%=  render "calls/fields/#{field.type}", field: field %>
   <% end %>
 
+  <!-- Don't look down -->
   <% if condition.fields.length - 1 == index %>
-      <input type="submit" name="commit" value="Send" class="btn btn btn-primary" data-disable-with="Send">
+            <input type="submit" name="commit" value="Send" class="btn btn btn-primary" data-disable-with="Send">
+          </div>
+        </div>
+      </div>
     </div>
   <% elsif (index % fields_per_screen) == (fields_per_screen - 1) %>
-      <button class= "btn-primary scroll-next" type = "button">Next</button>
+            <button class= "btn btn-lg btn-block btn-primary scroll-next" type = "button">Next</button>
+          </div>
+        </div>
+      </div>
     </div>
   <% end %>
 <% end %>

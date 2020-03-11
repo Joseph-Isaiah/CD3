@@ -1,12 +1,14 @@
-<h2><%= field.name.humanize %></h2>
-<div class="form-call-checkbox">
-  <% field.values.each do |value| %>
-    <label>
-      <input type="checkbox" value="<%= value %>" name="call[details[<%= field.name %>][]">
-      <div>
-        <%= value %>
-      </div>
-    </label>
-  <% end %>
-</div>
+<fieldset class="mb-3">
+  <legend class="form-call-legend"><%= field.name.humanize %></legend>
+  <div class="form-call form-call-checkbox">
+    <% field.values.each do |value| %>
+      <label>
+        <input type="checkbox" value="<%= value %>" name="call[details[<%= field.name %>][]">
+        <div>
+          <%= value %>
+        </div>
+      </label>
+    <% end %>
+  </div>
+</fieldset>
 

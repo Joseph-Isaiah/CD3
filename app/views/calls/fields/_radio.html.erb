@@ -1,11 +1,14 @@
-<h2><%= field.name.humanize %></h2>
-<div class = "form-call-radiobutton">
-  <% field.values.each do |value| %>
-    <label>
-      <input type="radio" name="call[details[<%= field.name %>]" name = "<%= value %>" id="<%= value %>" value="<%= value %>">
-      <div>
-        <%= value %>
-      </div>
-    </label>
-  <% end %>
-</div>
+<fieldset class="mb-3">
+  <legend class="form-call-legend"><%= field.name.humanize %></legend>
+  <div class="form-call form-call-radiobutton">
+    <% field.values.each do |value| %>
+      <label>
+        <input type="radio" name="call[details[<%= field.name %>]" name = "<%= value %>" id="<%= value %>" value="<%= value %>">
+        <div>
+          <%= value %>
+        </div>
+      </label>
+    <% end %>
+  </div>
+</fieldset>
+

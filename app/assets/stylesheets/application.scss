@@ -8,6 +8,7 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
@@ -20,6 +21,10 @@
 h1, h2 {
   font-family: Montserrat;
   font-weight: bold;
+}
+
+.title_condition h2{
+  font-weight: normal;
 }
 
 body {
