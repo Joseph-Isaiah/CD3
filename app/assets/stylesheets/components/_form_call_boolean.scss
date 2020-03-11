@@ -1,0 +1,25 @@
+.form-call-boolean {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 0.5rem;
+
+  label {
+    position: relative;
+    margin: 0;
+
+    > div {
+      background-color: #a00;
+      padding: 1rem 1rem 1rem 2rem;
+    }
+
+    > input:checked + div {
+      background-color: #0a0;
+    }
+  }
+
+  input {
+    position: absolute;
+    top: 0.5rem;
+    left: 1.5rem;
+  }
+}

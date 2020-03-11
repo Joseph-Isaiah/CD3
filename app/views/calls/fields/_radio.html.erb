@@ -1,11 +1,11 @@
 <h2><%= field.name.humanize %></h2>
-<div class = "form-check-inline">
-<% field.values.each do |value| %>
-  <div class="form-check">
-    <input class="form-check-input" type="radio" name="call[details[<%= field.name %>]" name = "<%= value %>" id="<%= value %>" value="<%= value %>" checked>
-    <label class="form-check-label" for="<%= value %>">
-      <%= value %>
+<div class = "form-call-radiobutton">
+  <% field.values.each do |value| %>
+    <label>
+      <input type="radio" name="call[details[<%= field.name %>]" name = "<%= value %>" id="<%= value %>" value="<%= value %>">
+      <div>
+        <%= value %>
+      </div>
     </label>
-  </div>
-<% end %>
+  <% end %>
 </div>
