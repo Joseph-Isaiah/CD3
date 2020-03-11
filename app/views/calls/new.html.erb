@@ -39,7 +39,14 @@
           <div class="col-6"><%= f.input :temperature %></div>
           <div class="col-6"><%= f.input :spa02 %></div>
         </div>
-        <button class= "btn btn-primary btn-lg btn-block scroll-next" type = "button">Next</button>
+        <div class="row">
+          <div class="col-3">
+            <%= link_to "Critical", call_emergencies_path, class: "js-critical-button btn btn-danger btn-lg btn-block" %>
+          </div>
+          <div class="col-9">
+            <button class= "btn btn-primary btn-lg btn-block scroll-next" type = "button">Next</button>
+          </div>
+        </div>
       </div>
     </div>
   <% end %>
