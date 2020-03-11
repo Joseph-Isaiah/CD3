@@ -3,14 +3,14 @@
     <div class="form-screen">
       <div class="container-fluid">
         <div class="row justify-content-center">
-          <div class="col-4">
+          <div class="col-7">
   <% end %>
   <!-- Don't look up -->
 
   <%  if field.values == nil %>
-    <%=  render "calls/fields/#{field.type}", field: field %>
+    <%=  render "calls/fields/#{field.type}", field: field, condition: condition %>
   <% else %>
-    <%=  render "calls/fields/#{field.type}", field: field %>
+    <%=  render "calls/fields/#{field.type}", field: field, condition: condition %>
   <% end %>
 
   <!-- Don't look down -->

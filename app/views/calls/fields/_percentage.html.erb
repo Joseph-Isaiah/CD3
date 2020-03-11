@@ -4,7 +4,7 @@
     <% value = "#{n * 10}%" %>
     <label>
       <input type="radio" name="call[details[<%= field.name %>]" value="<%= value %>">
-      <div>
+      <div class="<%= condition.category.name.downcase %>">
         <%= value %>
       </div>
     </label>
