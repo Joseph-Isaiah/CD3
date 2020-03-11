@@ -87,11 +87,11 @@ Condition.create!(
   fields: {
     # values checked
     time_of_onset: { type: "time_ago" },
-    timing: { type: "radio", values: %w[sudden gradual] },
+    timing: { type: "radio", values: %w[Sudden Gradual] },
     severity: { type: "0-10_range" },
     chest_pain_quality: { type: "checkbox", values: ["Like Prior MI", "Squeezing", "Stabbing", "Burning", "Aching"] },
-    onset: { type: "radio", values: %w[sleep rest upset exertion] },
-    radiatin: { type: "checkbox", values: ["None", "Arm", "Shoulder", "Back", "Jaw"] },
+    onset: { type: "radio", values: %w[Sleep Rest Upset Exertion] },
+    radiating: { type: "checkbox", values: ["None", "Arm", "Shoulder", "Back", "Jaw"] },
     chest_pain_associated_symptoms: { type: "checkbox", values: [ "None", "Nausea", "Sweating", "SOB", "Dizziness", "Weakness", "Cough", "Palpitations"] },
     chest_pain_past_history: { type: "checkbox", values: ["Cardiac", "Diabetes", "PE", "Other"] },
     chest_pain_meds: { type: "checkbox", values: ["O2", "Aspirin", "Nitro", "IV Fluids", "Other"] },
