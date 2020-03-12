@@ -1,2 +1,7 @@
 var multiScreenForm = document.querySelector('.multi-screen-form')
-multiScreenForm.insertAdjacentHTML('beforeEnd', '<%= j render "conditions/fields", fields_per_screen: 5, condition: @condition %>')
+
+var conditionFormScreens = document.querySelectorAll(".condition-form-screen")
+conditionFormScreens.forEach((screen) => screen.remove())
+
+var formScreensPartial = '<%= j render "conditions/fields", fields_per_screen: 5, condition: @condition %>'
+multiScreenForm.insertAdjacentHTML('beforeEnd', formScreensPartial)
