@@ -247,8 +247,60 @@ users_array = User.where(hospital_id: nil)
 
 puts "creating calls"
 
-
+hospital_array_without_hospital_1 = Hospital.all.drop(1)
 # for testing hospital view:
+
+Call.create!(
+    gender: 'male',
+    age: rand(99),
+    blood_pressure: 'High' ,
+    pulse: 80,
+    temperature: 70.8,
+    spa02: 9.00,
+    user: User.all.sample,
+    hospital: Hospital.first,
+    details: {},
+    condition: Condition.find_by(name: "Neuro")
+)
+
+Call.create!(
+    gender: 'male',
+    age: rand(99),
+    blood_pressure: 'High' ,
+    pulse: 80,
+    temperature: 70.8,
+    spa02: 9.00,
+    user: User.all.sample,
+    hospital: Hospital.first,
+    details: {},
+    condition: Condition.find_by(name: "MVC")
+)
+
+Call.create!(
+    gender: 'male',
+    age: rand(99),
+    blood_pressure: 'High' ,
+    pulse: 80,
+    temperature: 70.8,
+    spa02: 9.00,
+    user: User.all.sample,
+    hospital: Hospital.first,
+    details: {},
+    condition: Condition.find_by(name: "Labor")
+)
+
+Call.create!(
+    gender: 'male',
+    age: rand(99),
+    blood_pressure: 'High' ,
+    pulse: 80,
+    temperature: 70.8,
+    spa02: 9.00,
+    user: User.all.sample,
+    hospital: Hospital.first,
+    details: {},
+    condition: Condition.find_by(name: "Fever")
+)
 
 12.times do
   Call.create!(
@@ -259,7 +311,7 @@ puts "creating calls"
      temperature: 70.8,
      spa02: 9.00,
      user: User.all.sample,
-     hospital: Hospital.all.sample,
+     hospital: hospital_array_without_hospital_1.sample,
      details: {},
      condition: Condition.all.sample,
     )
