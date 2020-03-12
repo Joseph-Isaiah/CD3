@@ -265,5 +265,5 @@ puts "creating calls"
     )
 end
 
-gender_array = ["female", "male"]
+gender_array = ["Female", "Male"]
 

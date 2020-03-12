@@ -1,5 +1,5 @@
 class Call < ApplicationRecord
-  VALID_GENDERS = ["male", "female"]
+  VALID_GENDERS = ["Male", "Female"]
 
   belongs_to :user
   belongs_to :hospital
