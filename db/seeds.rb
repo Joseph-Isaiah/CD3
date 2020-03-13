@@ -103,6 +103,10 @@ Condition.create!(
 
   }
 )
+Condition.create!(
+  name: "COVID-19",
+  category: Category.find_by(name: "Medical")
+)
 
 Condition.create!(
   name: "Cardiac Arrest",
@@ -136,11 +140,6 @@ Condition.create!(
 
 Condition.create!(
   name: "Bleeding",
-  category: Category.find_by(name: "Medical")
-)
-
-Condition.create!(
-  name: "Other",
   category: Category.find_by(name: "Medical")
 )
 
