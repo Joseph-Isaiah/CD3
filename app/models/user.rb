@@ -5,4 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   belongs_to :hospital, optional: true
   has_many :calls
+
+  def paramedic?
+    hospital.blank?
+  end
 end
