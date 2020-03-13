@@ -37,3 +37,6 @@ gem "jsonb_accessor", "~> 1.0.0"
 #Adding the faker gem
 
 gem 'faker'
+
+#Adding Materialize gem
+gem 'materialize-sass'
