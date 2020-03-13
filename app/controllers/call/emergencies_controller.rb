@@ -10,6 +10,6 @@ class Call::EmergenciesController < ApplicationController
 
     Call::Broadcaster.new(@call).call
 
-    redirect_to new_call_path
+    redirect_to new_call_path, notice: "Info sent"
   end
 end
