@@ -99,20 +99,26 @@ Condition.create!(
     chest_pain_relieved_by: { type: "checkbox", values: ["None", "Rest", "Nitro", "Other"] },
     current_condition: { type: "radio", values: ["Still Present", "Better", "Worse", "Gone"] },
     STEMI: { type: "boolean", values: ["Yes", "No"] },
-    # values not yet checked
 
   }
 )
 Condition.create!(
   name: "COVID-19",
   category: Category.find_by(name: "Medical")
+  fields: {
+    confirmed: { type: "boolean", values: %w[Yes No] },
+    PPE_in_place: { type: "boolean", values: %w[Yes No] },
+    GCS: {type: "checkbox", values: %w[0-3 4-6 7-9 10-12 13-15]
+    respiratory_distress: { type: "boolean", values: %w[Yes No] },
+    date_of_onset: { type: "time_ago" },
+    current_condition: { type: "radio", values: ["Still Present", "Better", "Worse", "Gone"] },
+  }
 )
 
 Condition.create!(
   name: "Cardiac Arrest",
   category: Category.find_by(name: "Medical")
   fields: {
-
     time_of_onset: { type: "time_ago" },
     CPR_in_progress: { type: "boolean", values: ["Yes", "No"] },
     witnessed_arrest: { type: "boolean", values: %w[Yes No] },
