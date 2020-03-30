@@ -108,7 +108,7 @@ Condition.create!(
   fields: {
     confirmed: { type: "boolean", values: %w[Yes No] },
     PPE_in_place: { type: "boolean", values: %w[Yes No] },
-    GCS: {type: "checkbox", values: %w[0-3 4-6 7-9 10-12 13-15]
+    GCS: { type: "checkbox", values: ["0-3", "4-6", "7-9", "10-12", "13-15"] },
     respiratory_distress: { type: "boolean", values: %w[Yes No] },
     date_of_onset: { type: "time_ago" },
     current_condition: { type: "radio", values: ["Still Present", "Better", "Worse", "Gone"] },
