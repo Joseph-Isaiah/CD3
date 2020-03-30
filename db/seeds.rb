@@ -111,6 +111,17 @@ Condition.create!(
 Condition.create!(
   name: "Cardiac Arrest",
   category: Category.find_by(name: "Medical")
+  fields: {
+
+    time_of_onset: { type: "time_ago" },
+    CPR_in_progress: { type: "boolean", values: ["Yes", "No"] },
+    witnessed_arrest: { type: "boolean", values: %w[Yes No] },
+    CPR_initiated_prior_to_EMS: { type: "boolean", values: ["Yes", "No"] },
+    airway: { type: "checkbox", values: ["O2", "BVM", "Intubated", "Other"] },
+    defibrillated: { type: "boolean", values: %w[Yes No] },
+    medication_given: { type: "checkbox", values: ["None", "Epi", "Atropine", "Adenosine", "Amiodarone", "Lidocaine", "Magnesium", "NARCAN"] },
+    current_rythm: { type: "checkbox", values: [ "NA", "VF/Pulseless VT", "PEA", "Asystole", "Other"] },
+  }
 )
 
 Condition.create!(
