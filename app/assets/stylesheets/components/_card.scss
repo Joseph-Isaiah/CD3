@@ -21,11 +21,9 @@
 
 
 img {
-    max-width: 100%;
-}
-img {
     vertical-align: middle;
     border-style: none;
+    max-width: 100%;
 }
 
 .card-body {
@@ -44,6 +42,10 @@ img {
   display:grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
+  @media screen and (max-width:"765px"){
+    grid-template-columns: 1fr;
+    
+  }
 }
 
 h3, .h3 {

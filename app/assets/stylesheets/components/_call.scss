@@ -7,3 +7,15 @@
   font-size: 20px;
   position: relative;
 }
+
+
+
+@media (min-width: 664px) {
+  /* For a screen < 765px, this CSS will be read */
+  .form-screen {
+      height: 100%;
+    }
+  .categories {
+    padding: 155px 0;
+  }
+}
